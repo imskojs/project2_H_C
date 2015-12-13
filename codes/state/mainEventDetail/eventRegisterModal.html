@@ -1,0 +1,98 @@
+<ion-modal-view id="event-register">
+
+    <ion-content>
+
+        <div class="menu-info row zero flex-v">
+            <div class="col-10 col-close"
+                ng-click="EventDetail.modal.hide();"
+            >
+                <i class="ion-close-circled"></i>
+            </div>
+
+           <div class="col col-title zero">
+               <p class="zero center">
+                    이벤트 응모
+               </p>
+           </div>
+        </div>
+
+        <div class="title-section section">
+            <h2 class="zero title-text">
+                {{EventDetail.Model.post.title}}
+            </h2>
+            <p class="zero summary-text">
+                상품권 응모
+            </p>
+            <p class="zero date-text">
+                {{EventDetail.Model.post.duration}}
+            </p>
+        </div>
+
+        <div class="input-section section">
+            <div class="row zero row-name">
+                <div class="col-20 flex-v">
+                    <p class="zero input-title"> 이름</p>
+                </div>
+                <div class="col-60 flex-v">
+                    <input type="text" class="input input-name"
+                        ng-model="EventDetail.Model.form.name"
+                    >
+                </div>
+            </div>
+
+            <div class="row zero row-contact">
+                <div class="col-20 flex-v">
+                    <p class="zero input-title"> 연락처</p>
+                </div>
+                <div class="col-60 flex-v">
+                    <input type="number" class="input input-contact"
+                        ng-model="EventDetail.Model.form.contact"
+                    >
+                </div>
+            </div>
+            <p class="zero subtle-text">
+                무려권을 받으실 연락처를 입력해주세요. <br>
+                19세 이상만 응모가 가능합니다.
+            </p>
+        </div>
+
+        <div class="agree-section">
+            <div class="row zero row-agree">
+                <div class="col-20 col-tick-icon flex"
+                    ng-class="{selected: EventDetail.isSelected}"
+                    ng-click="EventDetail.isSelected = !EventDetail.isSelected"
+                >
+                    <i class="tick-icon"></i>
+                </div>
+                <div class="col-50 col-description flex-v">
+                    <p class="zero description-text">
+                        개인정보 수집 및 이용, <br>
+                        위치정보의 이용약관에 동의
+                    </p>
+                </div>
+                <div class="col-30 col-look flex"
+                    ng-click="EventDetail.showTerms = !EventDetail.showTerms"
+                >
+                    <p class="zero look-text">
+                        약관보기
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-button row flex">
+            <div class="col-45 flex col-button radius"
+                ng-click="EventDetail.sendForm();"
+            >
+                <p class="zero button-text"> 이벤트 응모</p>
+            </div>
+        </div>
+
+        <div class="terms-section" style="margin: 22px auto; width: 90%;"
+            ng-if="EventDetail.showTerms === true"
+        >
+            <h3 style="font-size: 16px;"> 이용약관</h3>
+            {{}}
+        </div>
+    </ion-content>
+</ion-modal-view>

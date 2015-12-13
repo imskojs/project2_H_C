@@ -1,0 +1,87 @@
+#event {
+    .bar-subheader.zero{
+        background: white;
+        border-bottom: 1px solid $light-grey;
+    }
+    .row-subheader {
+        width: 80%;
+        height: 31px;
+        font-size: 15px;
+        line-height: 100%;
+        font-weight: bold;
+        color: $positive;
+        margin: 0 auto;
+        border: 1px solid $positive;
+        margin: {
+            top: 7px;
+        }
+    }
+    .col-subheader {
+        &.selected {
+            background: $positive;
+            color: white;
+
+        }
+    }
+
+    .row-event-list {
+        height: 150px;
+        width: 95%;
+        margin: 0 auto {
+            top: 5px;
+        }
+
+        .event-image {
+            width: 100%;
+            height: 150px;
+        }
+
+        .col-event-content {
+            padding: 5px;
+            .event-title {
+                font-size: 17px;
+                line-height: 100%;
+                color: $positive;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+            .content-summary {
+                font-size: 13px;
+                line-height: 100%;
+                color: $grey;
+            }
+            .attend-count {
+                margin-top: 20px;
+                .attend {
+                    font-size: 17px;
+                    line-height: 100%;
+                    color: $positive;
+                }
+                .small-attend {
+                    font-size: 10px;
+                    color: $grey;
+                }
+            }
+        }
+    }
+
+    .row.bar-custom-footer {
+        background: white;
+        border-top: 1px solid #a5a5a5;
+        .icon {
+            height: 40px;
+        }
+        .icon-home {
+            content: url('../img/720/02_1_detail/detail_home.png');
+        }
+        .icon-location {
+            content: url('../img/720/02_1_detail/detail_local.png');
+        }
+        .icon-search {
+            content: url('../img/720/02_1_detail/detail_search.png');
+        }
+        .icon-event {
+            content: url('../img/720/02_1_detail/detail_event.png');
+        }
+    }
+}

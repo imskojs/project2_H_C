@@ -1,0 +1,111 @@
+#place-search{
+
+    .row-search {
+        height: 33px;
+        background: $light;
+        padding: 1px;
+        .c1 {
+            height: 100%;
+            select {
+                height: 100%;
+                width: 100%;
+                border-radius: 2px 2px 2px 2px;
+                line-height: 4vw;
+                font-size: 4vw;
+                margin-right: 2vw;
+                background: white;
+            }
+            margin-right: 2vw;
+        }
+        .c2 {
+            height: 100%;
+            input {
+                height: 100%;
+                width: 100%;
+                border-radius: 2px 0px 0px 2px;
+                line-height: 4vw;
+                font-size: 4vw;
+                padding: 0 {
+                  left: 5vw;
+                }
+            }
+            ::-webkit-input-placeholder {
+                font-size: 3.5vw;
+                padding-top: .4vw;
+                text-align: center;
+                color: $grey;
+            }
+        }
+        .c3 {
+            height: 100%;
+            border-radius: 0 2px 2px 0;
+            background: white;
+            i {
+                color: $grey;
+                &:before {
+                    font-size: 7vw;
+                }
+            }
+        }
+    }
+
+
+    .has-bar-custom-header {
+        top: 135px;
+    }
+    .wrapper {
+        width: 97%;
+        margin: 0 auto;
+    }
+    .list {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 55.5vw;
+        margin-top: 5px;
+        .row-title {
+            height: 14vw;
+            .place-name {
+                color: white;
+                font-size: 4.5vw;
+                line-height: 120%;
+            }
+            .place-address {
+                color: white;
+                font-size: 3.5vw;
+                line-height: 120%;
+            }
+            .ion-pinpoint {
+                color: white;
+                font-size: 7vw;
+            }
+            .distance-text {
+                color: white;
+                font-size: 3.2vw;
+                line-height: 3.2vw;
+                margin:{
+                    top: 0.5vw;
+                    bottom: 0.5vw;
+                }
+            }
+        }
+    }
+
+    .tags-container {
+        bottom: 0;
+        left: 0;
+        .tag-item {
+            -webkit-flex: 0 0 auto;-ms-flex: 0 0 auto;flex: 0 0 auto;
+            margin: 0 2px;
+            padding: 8px 5px;
+            background: $positive;
+            .tag-text {
+                font-size: 3.2vw;
+                line-height: 100%;
+                color: white;
+            }
+
+        }
+    }
+
+}

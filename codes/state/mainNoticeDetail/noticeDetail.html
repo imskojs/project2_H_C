@@ -1,0 +1,25 @@
+<ion-view id="notice-detail"
+    view-title="공지사항"
+    hide-back-button="true"
+>
+<ion-nav-buttons side="left">
+    <button class="button button-clear icon ion-android-arrow-back"
+        ng-click="goToState('main.noticeList')"
+    >
+    </button>
+</ion-nav-buttons>
+
+    <!-- List Content -->
+    <ion-content class="has-header">
+        <div class="title-container">
+            <h3 class="title-text zero">
+                {{NoticeDetail.Model.post.title}}
+            </h3>
+            <p><span class="date-text">{{NoticeDetail.Model.post.createdAt | date: 'yyyy.MM.dd'}}</span></p>
+        </div>
+
+        <div class="detail-content">
+            {{NoticeDetail.Model.post.content}}
+        </div>
+    </ion-content>
+</ion-view>

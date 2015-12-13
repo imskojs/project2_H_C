@@ -1,0 +1,31 @@
+$bar-footer-height:               50px !default;
+
+$very-light:                      #f3f0f7 !default;
+$light:                           #d8c7fe !default;
+$stable:                          #d5c6e5 !default;
+$positive:                        #5a1ba8 !default;
+// $calm:                            #11c1f3 !default;
+// $balanced:                        #33cd5f !default;
+// $energized:                       #ffc900 !default;
+// $assertive:                       #ef473a !default;
+// $royal:                           #886aea !default;
+$dark:                            #6716cb !default;
+
+
+// APP SPECIFIC
+$sky-blue: #368df6 !default;
+$blue: #1634a2 !default;
+$pink: #ce36d9 !default;
+$green: #10a613 !default;
+
+$bg-white: rgba(255, 255, 255, 0.6);
+
+$light-grey: #f3f3f3 !default;
+$grey: #686868 !default;
+$dark-grey: #666666 !default;
+$text: #333333 !default;
+
+$ionicons-font-path: "../fonts" !default;
+
+@import "codes/lib/ionic/scss/ionic";
+

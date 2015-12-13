@@ -1,0 +1,278 @@
+<ion-view id="detail"
+    can-swipe-back="false"
+    hide-back-button="true"
+>
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-android-arrow-back"
+            ng-click="Detail.goBack()"
+        >
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        {{ Detail.Model.current.name }}
+    </ion-nav-title>
+    <!-- List Detail Content -->
+    <ion-content class="has-header"
+      delegate-handle="placeDetail"
+    >
+
+        <div class="spinner-container"
+            ng-if="!Detail.showPhotos"
+        >
+            <ion-spinner class="image-spinner"
+                icon="ripple"
+            >
+            </ion-spinner>
+        </div>
+        <ion-slide-box class="non-row-slide-box" show-pager="true"
+            ng-if="Detail.showPhotos"
+        >
+            <ion-slide class="row-slides zero"
+                ng-repeat="photo in Detail.Model.current.photos"
+            >
+                <img class="place-image"
+                    ng-src="{{photo.url | cloudinary400}}"
+                >
+            </ion-slide>
+        </ion-slide-box>
+        <div class="detail-container">
+
+
+            <h2 class="main-title">
+                {{Detail.Model.current.name}}
+            </h2>
+            <ul class="row-tags row zero">
+                <div class="tag-item radius"
+                    ng-repeat="tag in Detail.Model.current.tags track by $index"
+                    ng-hide="$last"
+                >
+                    <p class="zero tag-text">{{tag}}</p>
+                </div>
+            </ul>
+
+
+            <!-- 한줄 소개 -->
+            <div class="summary-wrapper">
+                <h2 class="section-title">한줄소개</h2>
+                <p class="section-content">{{  Detail.Model.current.description }}</p>
+            </div>
+
+
+            <!-- 상세정보 -->
+            <div class="detail-wrapper">
+                <h2 class="section-title">상세정보</h2>
+                <div class="row zero row-content row-opening-hours">
+                    <div class="col-20 col-title">
+                        <p class="zero">영업시간</p>
+                    </div>
+                    <div class="col-80 section-content">
+                        <p class="zero"
+                            ng-repeat="groupedTime in Detail.Model.current.openingHours | groupByOpeningHours"
+                        >
+                            {{groupedTime}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row row-content address zero">
+                    <div class="col-20 col-title">
+                        <p class="zero">주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</p>
+                    </div>
+                    <div class="col-57 section-content">
+                        <p class="zero">{{Detail.Model.current.address}}</p>
+                    </div>
+                    <div class="col-23 zero"
+                        ng-click="goToState('main.daumMap', {id: Detail.Model.current.id})"
+                    >
+                        <i class="button-map"></i>
+                    </div>
+                </div>
+                <div class="row row-content address zero">
+                    <div class="col-20 col-title">
+                        <p class="zero">규&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;모</p>
+                    </div>
+                    <div class="col-80 section-content">
+                        <p class="zero">{{Detail.Model.current.tableNumber}}석</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 실시간 정보 -->
+            <div class="real-wrapper"
+                ng-if="Detail.isHuntingBar() && Detail.hasSexPercentage()"
+            >
+                <h2 class="section-title">실시간 정보</h2>
+                <div class="non-member real-container zero flex"
+                    ng-if="!Detail.isLoggedIn()"
+                    ng-click="goToState('login')"
+                >
+                    <div class="col">
+                        <p>실시간 정보는 회원 전용입니다.</p>
+                        <p class="zero">회원가입 바로가기</p>
+                    </div>
+                </div>
+                <div class="real-container zero"
+                    ng-if="Detail.isLoggedIn()"
+                >
+                    <div class="row row-sex-ratio zero flex">
+
+                        <div class="col-30 col-real-title">
+                            <p class="zero real-title">실시간 남여</p>
+                            <p class="zero real-title">테이블 현황</p>
+                        </div>
+
+                        <div class="col-5 col-man">
+                            <i class="ion-man"></i>
+                        </div>
+                        <div class="col-27 col-man-count">
+                            <span class="count">{{Detail.Model.current.male}}</span>
+                            <span class="tables-text">Tables</span>
+                        </div>
+
+                        <div class="col-5 col-woman">
+                            <i class="ion-woman"></i>
+                        </div>
+                        <div class="col-27 col-woman-count">
+                            <span class="count">{{Detail.Model.current.female}}</span>
+                            <span class="tables-text">Tables</span>
+                        </div>
+                    </div>
+                    <p class="faint-text zero">{{Detail.Model.current.updatedByOwner | date:'yyyy-MM-dd HH:mm'}} Updated</p>
+                    <p class="faint-text zero">해당 정보는 제휴업체에서 직접 제공합니다.</p>
+                </div>
+            </div>
+
+            <!-- 인기 안주 / 주류 -->
+            <div class="real-wrapper-dish"
+                ng-if="!Detail.isHuntingBar() && Detail.hasPopularMenu()"
+            >
+                <h2 class="section-title">인기 안주 / 주류</h2>
+
+                <!-- Non-Member  -->
+                <div class="non-member real-container real-container-dish zero flex"
+                    ng-if="!Detail.isLoggedIn()"
+                    ng-click="goToState('login')"
+                >
+                    <div class="col">
+                        <p>실시간 정보는 회원 전용입니다.</p>
+                        <p class="zero">회원가입 바로가기</p>
+                    </div>
+                </div>
+
+                <!-- Chart -->
+                <div class="real-container-dish zero row"
+                    ng-if="Detail.isLoggedIn() && !Detail.isHuntingBar()"
+                >
+                    <!-- col-left -->
+                    <div class="col-50">
+                        <h2 class="zero time-title center">
+                            {{Detail.month}}월 {{Detail.week}}주차 인기 안주
+                        </h2>
+                        <div class="graph-container"
+                            ng-repeat=" foodObj in Detail.Model.current.popularFood track by $index"
+                        >
+                            <div class="row row-graph zero">
+                                <div class="col-25 flex">
+                                    <p class="zero number-text">
+                                        {{foodObj.percentage}}%
+                                    </p>
+                                </div>
+                                <div class="col-60 col-graph flex">
+                                    <progress max="100" ng-value="{{foodObj.percentage}}"></progress>
+                                </div>
+                            </div>
+                            <h2 class="menu-title  zero">
+                                {{foodObj.name}}
+                            </h2>
+                        </div>
+                    </div>
+
+                    <!-- col-right -->
+                    <div class="col-50">
+                        <h2 class="zero time-title center">
+                            {{Detail.month}}월 {{Detail.week}}주차 인기 주류
+                        </h2>
+                        <div class="graph-container"
+                            ng-repeat=" foodObj in Detail.Model.current.popularDrink"
+                        >
+                            <div class="row row-graph zero">
+                                <div class="col-25 flex">
+                                    <p class="zero number-text">
+                                        {{foodObj.percentage}}%
+                                    </p>
+                                </div>
+                                <div class="col-60 col-graph flex">
+                                    <progress max="100" ng-value="{{foodObj.percentage}}"></progress>
+                                </div>
+                            </div>
+                            <h2 class="menu-title  zero">
+                                {{foodObj.name}}
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p class="faint-text margin-top-5px zero">{{Detail.Model.current.updatedAt | date:'yyyy-MM-dd HH:mm'}} Updated</p>
+                <p class="faint-text zero">해당 정보는 제휴업체에서 직접 제공합니다.</p>
+            </div>
+
+            <!-- 이벤트 -->
+            <div class="event-wrapper"
+                ng-if="Detail.Model.posts.length > 0"
+            >
+                <h2 class="section-title">이벤트</h2>
+                <!-- ng-click="goToState('main.eventDetail', {id: post.id})" -->
+                <div class="row row-event zero"
+                    ng-repeat="post in Detail.Model.posts | filter:{'category': 'BAR-EVENT-POST'}"
+                >
+                    <div class="col-18 col-event-title flex radius">
+                        <p class="zero col">
+                            이벤트{{$index + 1}}
+                        </p>
+                    </div>
+                    <div class="col zero flex-v col-text">
+                        <p class="zero">{{post.title}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 리뷰 -->
+            <div class="review-wrapper"
+                ng-if="Detail.Model.current.reviewTitle"
+            >
+                <h2 class="section-title">리뷰</h2>
+                <h3 class="girl-title zero">{{Detail.Model.current.reviewTitle}}</h3>
+                <p class="girl-text pre">
+                    {{Detail.Model.current.reviewSummary}}
+                </p>
+                <div class="row-view-more row">
+                    <div class="col-20 col-view-more"
+                        ng-click="Detail.openReview();"
+                    >
+                        <p class="view-more-text">
+                            리뷰 보기
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar-positive footer zero">
+        <div class="row zero">
+            <div class="col-50 flex"
+                ng-click="Detail.callPhone();"
+            >
+                <p class="zero footer-text">
+                    전화하기
+                </p>
+            </div>
+            <div class="col-50 flex border-left"
+                ng-click="Detail.showMenu()"
+            >
+                <p class="zero footer-text">
+                    메뉴보기
+                </p>
+            </div>
+        </div>
+    </ion-footer-bar>
+
+</ion-view>

@@ -1,0 +1,68 @@
+.black-70 {
+    background: rgba(0,0,0,0.7);
+}
+#place-list{
+    .has-bar-custom-header {
+        top: 135px;
+    }
+    .platform-ios & {
+        .has-bar-custom-header {
+            top: 155px;
+        }
+    }
+    .wrapper {
+        width: 97%;
+        margin: 0 auto;
+    }
+    .list {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 55.5vw;
+        margin-top: 5px;
+        .row-title {
+            height: 14vw;
+            .place-name {
+                color: white;
+                font-size: 4.5vw;
+                line-height: 120%;
+            }
+            .place-address {
+                color: white;
+                font-size: 3.5vw;
+                line-height: 120%;
+            }
+            .ion-pinpoint {
+                color: white;
+                font-size: 7vw;
+            }
+            .distance-text {
+                color: white;
+                font-size: 3.2vw;
+                line-height: 3.2vw;
+                margin:{
+                    top: 0.5vw;
+                    bottom: 0.5vw;
+                }
+            }
+        }
+    }
+
+    .tags-container {
+        bottom: 0;
+        left: 0;
+        .tag-item {
+            -webkit-flex: 0 0 auto;-ms-flex: 0 0 auto;flex: 0 0 auto;
+            margin: 0 2px;
+            padding: 8px 5px;
+            background: $positive;
+            .tag-text {
+                font-size: 3.2vw;
+                line-height: 100%;
+                color: white;
+            }
+
+        }
+    }
+
+}

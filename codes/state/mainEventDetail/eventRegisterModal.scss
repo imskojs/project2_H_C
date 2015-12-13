@@ -1,0 +1,119 @@
+#event-register {
+    // header
+    .menu-info {
+        border-bottom: 1px solid $light-grey;
+        margin: {
+            bottom: 10px;
+        }
+        height: 44px;
+        .col-close {
+            margin: {
+                left: 5%;
+            }
+        }
+        .col-title {
+            margin: {
+                left: -12%;
+            }
+            font-size: 20px;
+            line-height: 100%;
+            color: $positive;
+            font-weight: bold;
+        }
+        .ion-close-circled {
+            font-size: 28px;
+            color: $positive;
+        }
+    }
+
+    .section {
+        width: 90%;
+        margin: 0 auto;
+    }
+    //title
+    .title-section {
+        .title-text {
+            font-size: 19px;
+            line-height: 100%;
+            color: $positive;
+        }
+        .summary-text {
+            margin-top: 5px;
+            font-size: 14px;
+            line-height: 150%;
+            color: $positive;
+        }
+        .date-text {
+            font-size: 14px;
+            line-height: 100%;
+        }
+    }
+
+    .input-section {
+        padding: 1px;
+        margin-top: 30px;
+        .row-name {
+            margin: {
+                bottom: 10px;
+            }
+        }
+        .input-title {
+            font-size: 15px;
+            line-height: 100%;
+            color: $positive;
+        }
+        .input {
+            height: 28px;
+            width: 100%;
+            border: 1px solid $positive;
+        }
+        .subtle-text {
+            margin-left: 20%;
+            margin-top: 5px;
+            font-size: 11px;
+            line-height: 110%;
+            color: $grey;
+        }
+    }
+
+    .agree-section {
+        margin-top: 30px;
+        .row-agree {
+            height: 70px;
+            background: #fcf6ff;
+            .col-tick-icon {
+                .tick-icon {
+                    width: 40%;
+                    content: url($img + '/03_3_event_entry/event_entry_check.png');
+                }
+                &.selected .tick-icon {
+                    content: url($img + '/03_3_event_entry/images/event_entry_check1_03.png');
+
+                }
+            }
+            .col-description {
+                .description-text {
+                    font-size: 12px;
+                }
+            }
+
+            .col-look {
+                .look-text {
+                    font-size: 14px;
+                    color: $positive;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .row-button {
+        margin-top: 20px;
+        .col-button {
+            background: $positive;
+            color: white;
+            padding: 12px 0;
+            font-size: 18px;
+        }
+    }
+}

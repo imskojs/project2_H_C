@@ -1,0 +1,68 @@
+.bar-admin {
+    background: #2d4b65;
+    .title {
+        color: white;
+    }
+}
+
+.admin-menu {
+    .ion-calendar::before {
+        font-size: 25px;
+        color: #588e6c;
+    }
+    .title-section {
+        font-size: 20px;
+        padding: 10px 5%;
+        border-bottom: 1px solid $grey;
+    }
+    .wrapper {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .date-picker-section {
+        .date-text {
+            font-size: 15px;
+        }
+        .row-date-picker {
+            font-size: 15px;
+        }
+    }
+
+    .food-section, .drink-section {
+        .row-title {
+            font-size: 15px;
+        }
+        .input {
+            margin: 2px;
+            height: 30px;
+            width: 100%;
+            border: 1px solid $grey;
+        }
+        .input-description {
+            width: 95%;
+        }
+    }
+    .drink-section, .food-section {
+        margin: {
+            top: 20px;
+        }
+    }
+
+    .button-section {
+        margin-top: 50px;
+        .col-button {
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            margin-left: 2%;
+            padding: 10px;
+        }
+        .col-button-make {
+            background: #588e6c;
+        }
+        .col-button-cancel {
+            background: #c76f59;
+        }
+    }
+}

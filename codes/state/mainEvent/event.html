@@ -1,0 +1,61 @@
+<ion-view id="event"
+    hide-back-button="true"
+>
+    <ion-nav-title>
+        이벤트
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-search">
+        </button>
+    </ion-nav-buttons>
+
+    <ion-header-bar class="bar bar-subheader zero shadow"
+        no-tap-scroll="true"
+        align-title="center"
+    >
+        <div class="row zero row-subheader radius">
+            <div class="col-50 flex col-subheader selected"
+                ng-click="goToState('main.event.list', {eventType: 'hungersEvent'})"
+                ng-class="{selected: isParam({eventType: 'hungersEvent'}) }"
+            >
+                <p class="zero">
+                    HUNGERS 이벤트
+                </p>
+            </div>
+            <div class="col-50 flex border-left col-subheader"
+                ng-click="goToState('main.event.list', {eventType: 'barEvent'})"
+                ng-class="{selected: isParam({eventType: 'barEvent'}) }"
+            >
+                <p class="zero">
+                    주점 이벤트
+                </p>
+            </div>
+        </div>
+    </ion-header-bar>
+
+    <ion-nav-view name="event">
+    </ion-nav-view>
+
+    <ion-footer-bar class="bar-footer bar-custom-footer row zero">
+        <div class="col col-icon col-home zero flex "
+            ng-click="goToState('main.home.theme');"
+        >
+            <i class="icon-home icon"></i>
+        </div>
+        <div class="col col-icon col-location zero flex"
+            ng-click="goToState('main.daumMap');"
+        >
+            <i class="icon-location icon"></i>
+        </div>
+        <div class="col col-icon col-search zero flex"
+            ng-click="goToState('placeSearch');"
+        >
+            <i class="icon-search icon"></i>
+        </div>
+        <div class="col col-icon col-event zero flex"
+            ng-click="goToState('main.event.list');"
+        >
+            <i class="icon-event icon"></i>
+        </div>
+    </ion-footer-bar>
+</ion-view>

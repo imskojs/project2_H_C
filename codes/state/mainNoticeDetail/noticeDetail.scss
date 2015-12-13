@@ -1,0 +1,22 @@
+#notice-detail {
+    .has-header {
+        padding: 15px;
+    }
+    .title-container {
+        border-bottom: 1px solid $positive;
+    }
+    .title-text {
+        color: $positive;
+        font-size: 4vw;
+    }
+    .date-text {
+        font-size: 3vw;
+        color: $dark-grey;
+    }
+
+    .detail-content {
+        margin-top: 10px;
+        font-size: 3.5vw;
+        line-height: 150%;
+    }
+}

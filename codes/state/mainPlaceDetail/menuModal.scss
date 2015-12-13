@@ -1,0 +1,67 @@
+#menu {
+    .platform-ios & {
+        .menu-info {
+            margin-top: 20px;
+        }
+    }
+
+    // common
+    .menu-info {
+        border-bottom: 1px solid $light-grey;
+        margin: {
+            bottom: 10px;
+        }
+        height: 44px;
+        .col-close {
+            margin: {
+                left: 5%;
+            }
+        }
+        .col-title {
+            margin: {
+                left: -12%;
+            }
+            font-size: 20px;
+            line-height: 100%;
+            color: $positive;
+            font-weight: bold;
+        }
+        .ion-close-circled {
+            font-size: 28px;
+            color: $positive;
+        }
+    }
+    .menu-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .menu-title {
+        font-size: 12px;
+        line-height: 100%;
+        color: darken($positive, 10);
+        border: {
+            bottom: 2px solid $positive;
+        }
+        padding:{
+            bottom: 2px;
+        }
+    }
+
+    .row-menu-list {
+        font-size: 11px;
+        line-height: 100%;
+        letter-spacing: -0.5px;
+        padding: {
+            top: 8px;
+        };
+        &:last-of-type {
+            margin: {
+                bottom: 20px;
+            }
+        }
+        .menu-price {
+            font-size: 10px;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+<ion-view id="home">
+
+    <ion-header-bar class="bar bar-subheader zero flex shadow"
+      ng-if="!isState('main.admin')"
+    >
+        <div class="row row-bar zero radius">
+            <div class="col col-theme zero flex"
+                ng-class="{'selected': isState('main.home.theme')}"
+                ng-click="goToState('main.home.theme');"
+            >
+                <p class="zero">테마별</p>
+            </div>
+            <div class="col col-type zero flex"
+                ng-class="{'selected': isState('main.home.type')}"
+                ng-click="goToState('main.home.type'); loading();"
+            >
+                <p class="zero">종류별</p>
+            </div>
+            <div class="col col-location zero flex"
+                ng-class="{'selected': isState('main.home.location')}"
+                ng-click="goToState('main.home.location');"
+            >
+                <p class="zero">지역별</p>
+            </div>
+        </div>
+    </ion-header-bar>
+    <ion-nav-view name="home">
+    </ion-nav-view>
+</ion-view>

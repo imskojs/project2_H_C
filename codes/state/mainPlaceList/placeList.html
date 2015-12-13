@@ -1,0 +1,66 @@
+<ion-view id="place-list"
+    view-title="HUNGERS"
+    hide-back-button="true"
+>
+
+    <ion-nav-buttons side="left">
+        <button class="button button-clear icon ion-android-arrow-back"
+            ng-click="goToState('main.home.theme')"
+        >
+        </button>
+    </ion-nav-buttons>
+
+<!--     <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-search"
+            ng-click="goToState('placeSearch')"
+        >
+        </button>
+    </ion-nav-buttons>
+ -->
+    <ion-content class="has-footer place-list-content"
+        ng-class="{'has-bar-custom-header': Place.Model.currentItem.summary}"
+        delegate-handle="placeList"
+        overflow-scroll="true"
+    >
+        <ul class="wrapper">
+                <!-- ng-click="goToState('main.detail', {id: place.id})" -->
+            <li class="list zero shadow relative radius"
+                ng-repeat="place in PlaceList.Model.places"
+                ng-click="PlaceList.goToState(place)"
+                ng-style="{'background-image': 'url(' +
+                    (place.photos[0].url | cloudinary400)  + ')'}"
+            >
+                <div class="row row-title black-70 radius-top flex-v">
+                    <div class="col-85 zero">
+                        <h3 class="place-name zero">{{place.name}}</h3>
+                        <p class="place-address zero">{{place.address}}</p>
+                    </div>
+                    <div class="col zero"
+                        ng-click="goToState('main.daumMap', {id: place.id}); $event.stopPropagation();"
+                    >
+                        <div class="icon ion-pinpoint zero text-center"></div>
+                        <p class="zero distance-text text-center">{{place.distanceFromCurrent | mToKm}}</p>
+                    </div>
+                </div>
+
+                <div class="tags-container absolute">
+                    <div class="row">
+                        <div class="tag-item radius"
+                            ng-repeat="tag in place.tags track by $index"
+                            ng-hide="$last"
+                        >
+                            <p class="zero tag-text">{{tag}}</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <ion-infinite-scroll
+            ng-if="PlaceList.checkForMore()"
+            on-infinite="PlaceList.getFurtherPlaces()"
+            distance="1%"
+            immediate-check="false"
+        >
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

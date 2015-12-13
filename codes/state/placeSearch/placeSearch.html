@@ -1,0 +1,90 @@
+<ion-view id="place-search"
+    hide-back-button="true"
+>
+
+    <ion-header-bar class="bar bar-positive"
+        align-title="center"
+    >
+            <!-- ng-click="goToState('main.home.theme')" -->
+        <button class="button button-icon icon ion-android-arrow-back"
+            ng-click="goBack()"
+        >
+        </button>
+        <h2 class="title">
+            통합검색
+        </h2>
+    </ion-header-bar>
+
+    <ion-header-bar class="bar bar-subheader">
+        <div class="r1 row row-search flex zero">
+<!--
+            <div class="c1 col-30 zero">
+                <select ng-model="PlaceSearch.searchType" style="background-color: white">
+                    <option value="tag">키워드</option>
+                    <option value="placeName">주점명</option>
+                    <option value="address">지역</option>
+                </select>
+            </div>
+ -->
+            <div class="c2 col-75 zero">
+                       <!-- placeholder="{{PlaceSearch.setPlaceholderText()}}" -->
+                <input id="daum-map-search-input" type="text"
+                       placeholder="키워드 혹은 주점명을 입력해주세요"
+                       ng-model="PlaceSearch.search"
+                       ng-enter="PlaceSearch.searchLocationNearBy(PlaceSearch.search);"
+                >
+            </div>
+            <div class="c3 col-15 flex"
+                 touch
+                 ng-click="PlaceSearch.searchLocationNearBy(PlaceSearch.search);"
+                    >
+                <i class="ion-search"></i>
+            </div>
+        </div>
+    </ion-header-bar>
+
+    <ion-content class="has-header place-list-content"
+        overflow-scroll="true"
+        delegate-handle="placeSearch"
+    >
+        <ul class="wrapper">
+            <li class="list zero shadow relative radius"
+                ng-repeat="place in PlaceSearch.Model.places"
+                ng-click="goToState('main.detail', {id: place.id})"
+                ng-style="{'background-image': 'url(' +
+                    place.photos[0].url  + ')'}"
+            >
+                <div class="row row-title black-70 radius-top flex-v">
+                    <div class="col-85 zero">
+                        <h3 class="place-name zero">{{place.name}}</h3>
+                        <p class="place-address zero">{{place.address}}</p>
+                    </div>
+                    <div class="col zero"
+                        ng-click="goToState('main.daumMap', {id: place.id}); $event.stopPropagation();"
+                    >
+                        <div class="icon ion-pinpoint zero text-center"></div>
+                        <p class="zero distance-text text-center">{{place.distanceFromCurrent | mToKm}}</p>
+                    </div>
+                </div>
+
+                <div class="tags-container absolute">
+                    <div class="row">
+                        <div class="tag-item radius"
+                            ng-repeat="tag in place.tags track by $index"
+                            ng-hide="$last"
+                        >
+                            <p class="zero tag-text">{{tag}}</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <ion-infinite-scroll
+            on-infinite="PlaceSearch.getFurtherPlaces()"
+            distance="1%"
+            immediate-check="false"
+            ng-if="PlaceSearch.checkForMore()"
+        >
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,151 @@
+#signup {
+    .has-header {
+        background: url($img + '/01_0_login/splash_01.png') no-repeat;
+        background-size: cover;
+    }
+
+    .row-title {
+        background: $light-grey;
+        height: 27.5vw;
+        .col {
+            text-align: center;
+            font-size: 8.5vw;
+            color: $positive;
+        }
+    }
+
+    .row-divider {
+        height: 30px;
+        background-color: white;
+        margin-bottom: 5px;
+        color: $positive;
+        font-weight: bold;
+    }
+    .row-input {
+        height: 15vw;
+        background: $bg-white;
+        color: $positive;
+        margin-bottom: 2.2vw;
+        .c1 {
+            background: $bg-white;
+            i {
+                width: 50%;
+            }
+        }
+        .c2 {
+            height: 100%;
+            input {
+                height: 100%;
+                width: 100%;
+                line-height: 4vw;
+                font-size: 4vw;
+                padding: 0 {
+                  left: 4.5vw;
+                }
+                background: transparent;
+            }
+            ::-webkit-input-placeholder {
+                font-size: 4vw;
+                padding-top: .4vw;
+                text-align: left;
+                color: $positive;
+                font-weight: bold;
+            }
+
+        }
+    }
+    .email-icon {
+        content: url($img + '/01_0_signin/signin_e-mail.png');
+    }
+    .nickname-icon {
+        content: url($img + '/01_0_signin/signin_nickname.png');
+    }
+    .password-icon {
+        content: url($img + '/01_0_signin/signin_password.png');
+    }
+    .birth-icon {
+        content: url($img + '/01_0_signin/signin_birth.png');
+    }
+    .sexual-icon {
+        content: url($img + '/01_0_signin/signin_sexual.png');
+    }
+
+    .col-check {
+        text-align:center;
+        background: $stable;
+        font-size: 4vw;
+        line-height: 4vw;
+    }
+
+    .text-style {
+        font-size: 4vw;
+        line-height: 4vw;
+        color: $positive;
+        font-weight: bold;
+        padding: 0 {
+            left: 4.5vw;
+        }
+    }
+    .col-birth {
+        select {
+            height: 7.5vw;
+            width:30vw;
+            padding-left: 2vw;
+            border: 1px solid $positive;
+            color: $positive;
+            font-size: 4vw;
+            line-height: 4vw;
+            // appearance: none;
+            // -webkit-appearance: none;
+            background: transparent;
+        }
+        .right-triangle {
+            bottom: 0; right: 0;
+        }
+    }
+    .col-sex {
+        .radio-outer {
+            height: 4.4vw;
+            width: 4.4vw;
+            border: 1px solid $positive;
+            border-radius: 100%;
+            .radio-inner {
+                height: 3.4vw;
+                width: 3.4vw;
+                position: relative;
+                top: .25vw;
+                left: .25vw;
+                border-radius: 100%;
+                &.selected {
+                    background: $positive;
+                }
+            }
+        }
+        .sex-text {
+            margin-left: 1vw;
+        }
+    }
+
+
+
+
+
+
+    .row-complete {
+        margin-top: 10px;
+        height: 90px;
+        .complete-icon-button{
+            content: url($img + '/01_0_signin/signin_button.png');
+            width: 90%;
+        }
+    }
+
+
+    .row-find {
+        width: 65vw;
+        height: 10vw;
+        margin: 0 auto;
+        font-size: 3.5vw;
+        color: white;
+    }
+}

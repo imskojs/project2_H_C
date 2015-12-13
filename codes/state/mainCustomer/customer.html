@@ -1,0 +1,73 @@
+<ion-view id="customer"
+    view-title="고객센터"
+    hide-back-button="true"
+>
+
+<ion-nav-buttons side="left">
+    <button class="button button-clear icon ion-android-arrow-back"
+        ng-click="goToState('main.home.theme')"
+    >
+    </button>
+</ion-nav-buttons>
+
+
+<ion-content class="has-header">
+    <div class="main-icon-container">
+        <div class="row row-email-icon flex">
+            <i class="email-icon"></i>
+        </div>
+        <p class="zero p-first">Hungers는 고객 여러분의 의견을</p>
+        <p class="zero">소중하게 생각합니다</p>
+    </div>
+
+    <div class="form-container">
+        <div class="row row-input flex-v zero">
+            <div class="c1 col-15 zero">
+                <p class="zero">이메일</p>
+            </div>
+            <div class="c2 col zero">
+                <input type="text" placeholder="이메일을 입력해 주세요"
+                    ng-model="Customer.Model.form.email"
+                >
+            </div>
+        </div>
+        <div class="row row-input flex-v zero">
+            <div class="c1 col-15 zero">
+                <p class="zero">연락처</p>
+            </div>
+            <div class="c2 col zero">
+                <input type="text" placeholder="연락처를 입력해 주세요"
+                    ng-model="Customer.Model.form.phone"
+                >
+            </div>
+        </div>
+        <div class="row row-input flex-v zero">
+            <div class="c1 col-15 zero">
+                <p class="zero">제목</p>
+            </div>
+            <div class="c2 col zero">
+                <input type="text" placeholder="제목을 입력해 주세요"
+                    ng-model="Customer.Model.form.title"
+                >
+            </div>
+        </div>
+        <div class="row row-input row-text-area flex-v zero ">
+            <div class="c1 col-15 zero align-self">
+                <p class="zero">내용</p>
+            </div>
+            <div class="c2 col zero col-text-area">
+                <textarea
+                    ng-model="Customer.Model.form.content"
+                ></textarea>
+            </div>
+        </div>
+
+    </div>
+        <div class="row-send-opinion row flex zero">
+            <i class="send-icon"
+                ng-click="Customer.formHandler();"
+            ></i>
+        </div>
+</ion-content>
+
+</ion-view>

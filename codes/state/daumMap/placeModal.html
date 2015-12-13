@@ -1,0 +1,46 @@
+<ion-modal-view id="daum-map-modal">
+    <ion-content class="daum-map-modal-content">
+        <div class="daum-map-modal-container">
+
+            <div class="r1 row row-title zero"
+                touch
+                ng-click="Map.Model.modal.hide()"
+            >
+                <div class="c1 col-90 flex">
+                    <p>
+                        {{ Map.Model.selectedPlace.name }}
+                    </p>
+                </div>
+                <div class="c2 col flex"
+                >
+                    <i class="icon ion-ios-close-empty"></i>
+                </div>
+            </div>
+            <div class="r2 row row-content zero radius-bottom relative"
+                touch
+                ng-click="Map.goToDetailHandler('main.detail')"
+            >
+                <div class="c1 col zero radius-bottom">
+                    <img class="radius-bottom"
+                        ng-src="{{ Map.Model.selectedPlace.photos[0].url }}"
+                    >
+
+                    <div class="description absolute radius-bottom">
+                        <div class="row row-description flex-v zero radius-bottom">
+                            <div class="c1 col-14 flex">
+                                <img src="img/720/main_gps/01_main_gps_07.png" alt="Nail Icon">
+                            </div>
+                            <div class="c2 col-54">
+                                <span>{{ Map.Model.selectedPlace.address }}</span>
+                            </div>
+                            <div class="c3 col flex">
+                                <i class="more-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,69 @@
+<ion-view id="list"
+    hide-back-button="true"
+>
+
+
+<!--     <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-navicon-round"
+            ng-click=""
+        >
+        </button>
+    </ion-nav-buttons>
+ -->
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-android-arrow-back"
+            ng-click="goToState('main.home.theme')"
+        >
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        이벤트
+    </ion-nav-title>
+
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-search"
+            ng-click="goToState('placeSearch')"
+        >
+        </button>
+    </ion-nav-buttons>
+
+
+    <ion-content class="has-subheader">
+
+        <div class="row row-event-list zero shadow radius"
+            ng-repeat="post in EventList.Model.posts"
+            ng-click="goToState('main.eventDetail', {id: post.id})"
+        >
+            <div class="col-45 col-event-img">
+                <img class="event-image radius-left" ng-src="{{post.photos[0].url}}">
+            </div>
+            <div class="col-55 col-event-content">
+                <h2 class="event-title zero text-overflow">
+                    {{post.title}}
+                </h2>
+                <p class="zero pre content-summary">
+                    {{post.summary}}
+
+                    기간
+                    {{post.duration}}
+                </p>
+
+<!--                 <p class="right zero attend-count"
+                    ng-if="isParam({eventType: 'hungersEvent'})"
+                >
+                    <span class="attend">{{post.likes}}</span>
+                    <span class="small-attend">응모</span>
+                </p>
+ -->
+            </div>
+        </div>
+
+        <ion-infinite-scroll
+            on-infinite="EventList.getOlderPosts()"
+            immediate-check="false"
+            ng-if="EventList.Model.more"
+        >
+        </ion-infinite-scroll>
+
+    </ion-content>
+</ion-view>

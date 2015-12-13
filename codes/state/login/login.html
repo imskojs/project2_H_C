@@ -1,0 +1,70 @@
+<ion-view id="login">
+    <ion-header-bar class="bar bar-positive"
+        no-tap-scroll="true"
+        align-title="center"
+    >
+      <div class="buttons"
+        ng-click="goToState('main.home.theme')"
+      >
+        <button class="button button-icon icon ion-android-arrow-back"></button>
+      </div>
+        <h2 class="title">HUNGERS</h2>
+    </ion-header-bar>
+    <ion-content class="no-header bg">
+        <div class="row row-main-icon flex">
+            <i class="main-icon">
+            </i>
+        </div>
+
+        <div class="row row-input zero">
+            <div class="c1 zero col-15 flex">
+                <i class="email-icon"></i>
+            </div>
+            <div class="c2 col zero">
+                <input type="text" placeholder="e-mail"
+                    ng-model="Login.Model.form.email"
+                >
+            </div>
+        </div>
+
+        <div class="row row-input zero">
+            <div class="c1 zero col-15 flex">
+                <i class="password-icon"></i>
+            </div>
+            <div class="c2 col zero">
+                <input type="password" placeholder="Password"
+                    ng-model="Login.Model.form.password"
+                >
+            </div>
+        </div>
+
+        <div class="row row-login-button flex"
+            touch
+        >
+            <i class="login-icon-button"
+                ng-click="Login.loginHandler();"
+            ></i>
+        </div>
+
+        <div class="row row-find">
+<!--             <div class="col col-find-password flex"
+                ng-click="goToState('signup');"
+            >
+                <p class="col zero text-center">비밀번호찾기</p>
+            </div>
+ -->
+            <div class="col col-membership flex"
+                ng-click="goToState('signup');"
+            >
+                <p class="zero text-center" style="font-size: 16px; font-weight: bold; line-height: 100%;">회원가입</p>
+            </div>
+<!--             <div class="col-60 col-membership flex"
+                ng-click="goToState('main.home.theme');"
+            >
+                <p class="zero text-center" style="font-size: 16px; font-weight: bold; line-height: 100%;">둘러보기</p>
+            </div>
+ -->
+ </div>
+
+    </ion-content>
+</ion-view>

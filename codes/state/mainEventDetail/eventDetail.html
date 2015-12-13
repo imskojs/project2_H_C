@@ -1,0 +1,69 @@
+<ion-view id="event-detail"
+    hide-back-button="false"
+>
+    <ion-nav-title>
+        이벤트
+    </ion-nav-title>
+
+    <ion-content class="has-header">
+
+        <ion-slide-box class="non-row-slide-box" show-pager="false">
+            <ion-slide class="row-slides zero">
+                <img class="place-image"
+                    ng-src="{{EventDetail.Model.post.photos[0].url}}"
+                >
+            </ion-slide>
+        </ion-slide-box>
+
+        <div class="event-title-wrapper wrapper">
+            <div class="event-title">
+                <p class="zero">
+                    {{EventDetail.Model.post.title}}
+                </p>
+            </div>
+            <div class="event-date">
+                <p class="zero event-date-text">
+                    {{EventDetail.Model.post.duration}}
+                </p>
+            </div>
+                <!-- ng-if="EventDetail.Model.post.category === 'HUNGERS-EVENT-POST'" -->
+            <div class="event-number"
+                ng-if="false"
+            >
+                <p class="zero event-number-text">
+                    <span class="count">{{EventDetail.Model.post.likes}}</span> <span>명 응모 중</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="event-detail-wrapper wrapper">
+            <div class="event-detail-title">
+                상세정보
+            </div>
+            <div class="event-detail-content">
+                <p class="zero pre content-text">
+                    {{EventDetail.Model.post.content}}
+                </p>
+            </div>
+        </div>
+    </ion-content>
+
+    <ion-footer-bar class="bar-positive footer zero">
+        <div class="row zero">
+            <div class="col flex"
+                ng-click="goToState('main.detail', {id: EventDetail.Model.post.place})"
+            >
+                <p class="zero footer-text">
+                    업체 상세정보 보기
+                </p>
+            </div>
+<!--             <div class="col-50 flex border-left"
+                ng-click="EventDetail.modal.show();"
+            >
+                <p class="zero footer-text">
+                    응모하기
+                </p>
+            </div>
+ -->        </div>
+    </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,116 @@
+<ion-view id="main">
+    <ion-side-menus>
+        <ion-side-menu-content
+            edge-drag-threshold="false"
+            drag-content="false"
+        >
+        <!-- Main View -->
+            <ion-nav-bar class="bar-positive shadow"
+                align-title="center"
+                delegate-handle="main"
+            >
+               <ion-nav-back-button>
+                </ion-nav-back-button>
+
+            </ion-nav-bar>
+
+            <ion-nav-view name="main">
+            </ion-nav-view>
+
+        </ion-side-menu-content>
+
+        <!-- Side Menu -->
+        <ion-side-menu side="left" class="side-menu-container">
+
+            <ion-content class="side-menu-content">
+
+                <div class="row row-header flex zero">
+                    <i class="hungers-logo"></i>
+                </div>
+
+                <ul>
+                    <li class="row row-list flex-v zero"
+                        ng-click="goToState('login')"
+                        ng-if="!Main.isLoggedIn"
+                    >
+                        <div class="col-23 col-icon flex zero">
+                            <i class="icon login-icon"></i>
+                        </div>
+                        <div class="col col-text flex-v zero"
+                        >
+                            <p class="zero">로그인 / 회원가입</p>
+                        </div>
+                    </li>
+                    <li class="row row-list flex-v zero"
+                        ng-click="Main.logOut()"
+                        ng-if="Main.isLoggedIn"
+                    >
+                        <div class="col-23 col-icon flex zero">
+                            <i class="icon login-icon"></i>
+                        </div>
+                        <div class="col col-text flex-v zero"
+                        >
+                            <p class="zero">로그아웃</p>
+                        </div>
+                    </li>
+                    <li class="row row-list flex-v zero"
+                        ng-click="goToState('main.noticeList')"
+                    >
+                        <div class="col-23 col-icon flex zero">
+                            <i class="icon notice-icon"></i>
+                        </div>
+                        <div class="col col-text flex-v zero">
+                            <p class="zero">공지사항</p>
+                        </div>
+                    </li>
+                    <li class="row row-list flex-v zero"
+                        ng-click="goToState('main.association')"
+                    >
+                        <div class="col-23 col-icon flex zero">
+                            <i class="icon association-icon"></i>
+                        </div>
+                        <div class="col col-text flex-v zero">
+                            <p class="zero">제휴문의</p>
+                        </div>
+                    </li>
+                    <li class="row row-list flex-v zero"
+                        ng-click="goToState('main.contract')"
+                    >
+                        <div class="col-23 col-icon flex zero">
+                            <i class="icon contract-icon"></i>
+                        </div>
+                        <div class="col col-text flex-v zero">
+                            <p class="zero">약관보기</p>
+                        </div>
+                    </li>
+                    <li class="row row-list flex-v zero"
+                        ng-click="goToState('main.customer')"
+                    >
+                        <div class="col-23 col-icon flex zero">
+                            <i class="icon customer-icon"></i>
+                        </div>
+                        <div class="col col-text flex-v zero">
+                            <p class="zero">고객센터</p>
+                        </div>
+                    </li>
+                    <li class="row row-list flex-v zero"
+                        ng-if="Main.isBarAdmin"
+                        ng-click="Main.goToState('main.admin')"
+                    >
+                        <div class="col-23 col-icon flex zero">
+                            <i class="icon ion-unlocked"></i>
+                        </div>
+                        <div class="col col-text flex-v zero">
+                            <p class="zero">ADMIN</p>
+                        </div>
+                    </li>
+                </ul>
+            </ion-content>
+
+        </ion-side-menu>
+
+    </ion-side-menus>
+
+
+
+</ion-view>

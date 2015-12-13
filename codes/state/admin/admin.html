@@ -1,0 +1,187 @@
+<ion-view id="admin" class="admin"
+  hide-nav-bar="true"
+>
+    <ion-header-bar class="bar bar-admin"
+        no-tap-scroll="true"
+        align-title="center"
+    >
+        <div class="buttons">
+            <i class="button button-icon icon ion-android-arrow-back"
+                ng-click="goToState('main.home.theme')"
+            ></i>
+        </div>
+        <h2 class="title">
+            HUNGERS
+        </h2>
+    </ion-header-bar>
+
+    <ion-content class="has-header">
+
+
+
+            <h2 class="title-section">
+                실시간 테이블 현황
+            </h2>
+
+        <div class="wrapper">
+<!--             <div class="date-picker-section">
+                <h2 class="date-text sub-title">
+                    날짜
+                </h2>
+                <div class="row zero row-date-picker">
+                    <div class="col-90">
+                        <p class="zero picked-date-text">
+                            수요일, 7월 8일, 2014 20:30 PM
+                        </p>
+                    </div>
+                    <div class="col-10"
+                        ng-click=""
+                    >
+                        <i class="ion-calendar"></i>
+                    </div>
+                </div>
+            </div>
+ -->
+            <div class="sex-ratio-section">
+                <h2 class="sub-title">
+                    테이블 현황
+                </h2>
+
+                <div class="row row-table row-table-male zero">
+                    <div class="col-20 flex male">
+                        <p class="zero ">
+                            남자
+                        </p>
+                    </div>
+                    <div class="col zero col-input-table">
+                        <input type="number" class="input-table" placeholder="현재 테이블 수를 입력해 주세요"
+                            ng-model="Admin.Model.form.male"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="row row-table row-table-female zero">
+                    <div class="col-20 flex female">
+                        <p class="zero">
+                            여자
+                        </p>
+                    </div>
+                    <div class="col zero col-input-table">
+                        <input type="number" class="input-table" placeholder="현재 테이블 수를 입력해 주세요"
+                            ng-model="Admin.Model.form.female"
+                        >
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="button-section">
+                <div class="row row-buttons zero flex">
+                    <div class="col-45 col-button col-button-make flex radius"
+                        ng-click="Admin.updateTableSexPercentage()"
+                    >
+                        <p class="zero">만들기</p>
+                    </div>
+                    <div class="col-45 col-button col-button-cancel flex radius"
+                        ng-click="goToState('main.home.theme')"
+                    >
+                        <p class="zero">취소</p>
+                    </div>
+                </div>
+            </div>
+
+        <h2 class="title-section" style="margin-top: 44px;">
+            실시간 안주 / 주류
+        </h2>
+           <div class="row row-food zero food-section">
+               <div class="col-65">
+                   <h2 class="row-title">
+                       인기안주
+                   </h2>
+                   <input type="text" class="input-description input"
+                        placeholder="1위 안주"
+                        ng-model="Admin.Model.form.popularFood[0].name"
+                   >
+                   <input type="text" class="input-description input"
+                        placeholder="2위 안주"
+                        ng-model="Admin.Model.form.popularFood[1].name"
+                   >
+                   <input type="text" class="input-description input"
+                        placeholder="3위 안주"
+                        ng-model="Admin.Model.form.popularFood[2].name"
+                   >
+               </div>
+
+               <div class="col-35">
+                   <h2 class="row-title">
+                       점유율
+                   </h2>
+                   <input type="number" class="input" placeholder="%"
+                        ng-model="Admin.Model.form.popularFood[0].percentage"
+                   >
+                   <input type="number" class="input" placeholder="%"
+                        ng-model="Admin.Model.form.popularFood[1].percentage"
+                   >
+                   <input type="number" class="input" placeholder="%"
+                        ng-model="Admin.Model.form.popularFood[2].percentage"
+                   >
+               </div>
+
+           </div>
+
+           <div class="row row-food zero drink-section">
+               <div class="col-65">
+                    <h2 class="row-title">
+                       인기주류
+                    </h2>
+                    <input type="text" class="input-description input"
+                        placeholder="1위 주류"
+                        ng-model="Admin.Model.form.popularDrink[0].name"
+                    >
+                    <input type="text" class="input-description input"
+                        placeholder="2위 주류"
+                        ng-model="Admin.Model.form.popularDrink[1].name"
+                    >
+                    <input type="text" class="input-description input"
+                        placeholder="3위 주류"
+                        ng-model="Admin.Model.form.popularDrink[2].name"
+                    >
+               </div>
+
+               <div class="col-35">
+                   <h2 class="row-title">
+                       점유율
+                   </h2>
+                   <input type="number" class="input" placeholder="%"
+                        ng-model="Admin.Model.form.popularDrink[0].percentage"
+                   >
+                   <input type="number" class="input" placeholder="%"
+                        ng-model="Admin.Model.form.popularDrink[1].percentage"
+                   >
+                   <input type="number" class="input" placeholder="%"
+                        ng-model="Admin.Model.form.popularDrink[2].percentage"
+                   >
+               </div>
+
+           </div>
+
+           <div class="button-section" style="margin-bottom: 44px;">
+               <div class="row row-buttons zero flex">
+                   <div class="col-45 col-button col-button-make flex radius"
+                       ng-click="Admin.updatePopularMenu()"
+                   >
+                       <p class="zero">만들기</p>
+                   </div>
+                   <div class="col-45 col-button col-button-cancel flex radius"
+                       ng-click
+                   >
+                       <p class="zero">취소</p>
+                   </div>
+               </div>
+           </div>
+        </div>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,95 @@
+<ion-view id="admin-menu" class="admin-menu"
+    hide-back-button="true"
+>
+    <ion-header-bar class="bar bar-admin"
+        no-tap-scroll="true"
+        align-title="center"
+    >
+        <h2 class="title">
+            HUNGERS
+        </h2>
+    </ion-header-bar>
+
+    <ion-content class="has-header">
+        <h2 class="title-section">
+            실시간 안주 / 주류
+        </h2>
+        <div class="wrapper">
+<!--             <div class="date-picker-section">
+                <h2 class="date-text sub-title">
+                    날짜
+                </h2>
+                <div class="row zero row-date-picker">
+                    <div class="col-90">
+                        <p class="zero picked-date-text">
+                            수요일, 7월 8일, 2014 20:30 PM
+                        </p>
+                    </div>
+                    <div class="col-10"
+                        ng-click=""
+                    >
+                        <i class="ion-calendar"></i>
+                    </div>
+                </div>
+            </div>
+ -->
+            <div class="row row-food zero food-section">
+                <div class="col-65">
+                    <h2 class="row-title">
+                        인기안주
+                    </h2>
+                    <input type="text" class="input-description input">
+                    <input type="text" class="input-description input">
+                    <input type="text" class="input-description input">
+                </div>
+
+                <div class="col-35">
+                    <h2 class="row-title">
+                        점유율
+                    </h2>
+                    <input type="text" class="input" placeholder="%">
+                    <input type="text" class="input" placeholder="%">
+                    <input type="text" class="input" placeholder="%">
+                </div>
+
+            </div>
+
+            <div class="row row-food zero drink-section">
+                <div class="col-65">
+                    <h2 class="row-title">
+                        인기주류
+                    </h2>
+                    <input type="text" class="input-description input">
+                    <input type="text" class="input-description input">
+                    <input type="text" class="input-description input">
+                </div>
+
+                <div class="col-35">
+                    <h2 class="row-title">
+                        점유율
+                    </h2>
+                    <input type="text" class="input" placeholder="%">
+                    <input type="text" class="input" placeholder="%">
+                    <input type="text" class="input" placeholder="%">
+                </div>
+
+            </div>
+
+            <div class="button-section">
+                <div class="row row-buttons zero flex">
+                    <div class="col-45 col-button col-button-make flex radius"
+                        ng-click=""
+                    >
+                        <p class="zero">만들기</p>
+                    </div>
+                    <div class="col-45 col-button col-button-cancel flex radius"
+                        ng-click
+                    >
+                        <p class="zero">취소</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

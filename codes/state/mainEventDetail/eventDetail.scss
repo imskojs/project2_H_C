@@ -1,0 +1,58 @@
+#event-detail {
+    .place-image {
+        height: 225px;
+        width: 100%;
+    }
+
+    .wrapper {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .event-title {
+        margin: {
+            top: 10px;
+        };
+        font-size: 24px;
+        line-height: 100%;
+        color: $positive;
+        letter-spacing: -0.5px;
+    }
+    .event-date {
+        margin-top: 5px;
+        font-size: 13px;
+    }
+    .event-number {
+        .event-number-text {
+            font-size: 13px;
+            .count {
+                color: $positive;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .event-detail-wrapper {
+        margin: {
+            top: 10px;
+        }
+        .event-detail-title {
+            padding: {
+                bottom: 5px;
+            }
+            font-size: 14px;
+            line-height: 100%;
+            font-weight: bold;
+            color: $positive;
+            border: {
+                bottom: 2px solid $positive;
+            }
+        }
+
+        .event-detail-content {
+            .content-text {
+                color: $grey;
+                font-size: 12px;
+            }
+        }
+    }
+}

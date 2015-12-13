@@ -1,0 +1,113 @@
+<ion-view id="type" style="background-color: #2d4b65;"
+    view-title="HUNGERS"
+    hide-back-button="true"
+>
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-navicon-round"
+            ng-click="Main.toggleSideMenu()"
+        >
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-search"
+            ng-click="goToState('placeSearch')"
+        >
+        </button>
+    </ion-nav-buttons>
+
+    <ion-content class="has-subheader">
+        <ul>
+            <li class="row row-item zero flex-v row-pocha"
+                ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'pocha', category: 'type'})"
+            >
+                <div class="col-35 flex">
+                    <i class="icon pocha-icon "></i>
+                </div>
+                <div class="col col-text zero">
+                    <h3 class="title-text zero">
+                        Hof & Pocha
+                    </h3>
+                    <p class="sub-text zero">
+                        한국식 소주 호프 & 포차
+                    </p>
+                </div>
+            </li>
+            <li class="row row-item zero flex-v row-pub"
+                ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'pub', category: 'type'})"
+            >
+                <div class="col-35 flex">
+                    <i class="icon pub-icon "></i>
+                </div>
+                <div class="col col-text zero">
+                    <h3 class="title-text zero">
+                        Pub
+                    </h3>
+                    <p class="sub-text zero">
+                        서양식 주점
+                    </p>
+                </div>
+            </li>
+            <li class="row row-item zero flex-v row-izakaya"
+                ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'izakaya', category: 'type'})"
+            >
+                <div class="col-35 flex">
+                    <i class="icon izakaya-icon "></i>
+                </div>
+                <div class="col col-text zero">
+                    <h3 class="title-text zero">
+                        Izakaya
+                    </h3>
+                    <p class="sub-text zero">
+                        일본식 선술집
+                    </p>
+                </div>
+            </li>
+            <li class="row row-item zero flex-v row-lounge"
+                ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'lounge', category: 'type'})"
+            >
+                <div class="col-35 flex">
+                    <i class="icon lounge-icon "></i>
+                </div>
+                <div class="col col-text zero">
+                    <h3 class="title-text zero">
+                        Bar & Lounge
+                    </h3>
+                    <p class="sub-text zero">
+                        바 & 라운지
+                    </p>
+                </div>
+            </li>
+            <li class="row row-item zero flex-v row-beer"
+                ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'beer', category: 'type'})"
+            >
+                <div class="col-35 flex">
+                    <i class="icon beer-icon "></i>
+                </div>
+                <div class="col col-text zero">
+                    <h3 class="title-text zero">
+                        Beer
+                    </h3>
+                    <p class="sub-text zero">
+                        맥주 전문점
+                    </p>
+                </div>
+            </li>
+            <li class="row row-item zero flex-v row-fusion"
+                ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'fusion', category: 'type'})"
+            >
+                <div class="col-35 flex">
+                    <i class="icon fusion-icon "></i>
+                </div>
+                <div class="col col-text zero">
+                    <h3 class="title-text zero">
+                        Traditional Bar <br>
+                        & Fusion Bar
+                    </h3>
+                    <p class="sub-text zero">
+                        민속 주점 & 퓨전 주점
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>

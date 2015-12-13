@@ -1,0 +1,17 @@
+{
+  "name": "appName",
+  "app_id": "",
+  "gulpStartupTasks": [
+    "view",
+    "js",
+    "sass",
+    "watch"
+  ],
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "12.41.296.5"
+    }
+  ]
+}

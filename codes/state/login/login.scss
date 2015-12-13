@@ -1,0 +1,71 @@
+#login{
+    .no-header {
+        background: url($img + '/01_0_login/splash_01.png') no-repeat;
+        background-size: cover;
+    }
+
+    .row-main-icon {
+        height: 95vw;
+        .main-icon {
+            width: 38vw;
+            content: url($img + '/01_0_login/login_logo.png');
+        }
+    }
+
+    .row-input {
+        height: 15vw;
+        background: $bg-white;
+        color: $positive;
+        margin-bottom: 2px;
+        .c1 {
+            background: $bg-white;
+            i {
+                width: 50%;
+            }
+        }
+        .c2 {
+            height: 100%;
+            input {
+                height: 100%;
+                width: 100%;
+                line-height: 4vw;
+                font-size: 4vw;
+                padding: 0 {
+                  left: 4.5vw;
+                }
+                background: transparent;
+            }
+            ::-webkit-input-placeholder {
+                font-size: 4vw;
+                padding-top: .4vw;
+                text-align: left;
+                color: $positive;
+                font-weight: bold;
+            }
+
+        }
+    }
+    .email-icon {
+        content: url($img + '/01_0_login/login_e-mail.png');
+    }
+    .password-icon {
+        content: url($img + '/01_0_login/login_password.png');
+    }
+
+    .row-login-button {
+        height: 24vw;
+        .login-icon-button {
+            width: 94vw;
+            content: url($img + '/01_0_login/login_button.png');
+        }
+    }
+
+    .row-find {
+        width: 65vw;
+        height: 10vw;
+        margin: 0 auto;
+        font-size: 3.5vw;
+        color: white;
+    }
+
+}

@@ -1,0 +1,68 @@
+#type {
+    .row + .row {
+        margin-top: 0;
+    }
+    .row-item {
+        height: 33.5vw;
+        border-bottom: 3px solid #ab9cbc;
+        .icon {
+            width: 50%;
+        }
+        .col-text {
+            margin-left: 2vw;
+            .title-text {
+                color: white;
+                font-size: 5vw;
+                line-height: 5vw;
+            }
+            .sub-text {
+                color: white;
+                font-size: 3.5vw;
+                font-weight: bold;
+                line-height: 5.5vw;
+            }
+        }
+    }
+    .row-pocha {
+        background: url($img + '/01_2_main_type/main_bg/01_2_main_type_02.png') no-repeat;
+        background-size: cover;
+        .pocha-icon {
+            content: url($img + '/01_2_main_type/maintype_icon/01_2_main_type_03.png');
+        }
+    }
+    .row-pub {
+        background: url($img + '/01_2_main_type/main_bg/01_2_main_type_04.png') no-repeat;
+        background-size: cover;
+        .pub-icon {
+            content: url($img + '/01_2_main_type/maintype_icon/01_2_main_type_06.png');
+        }
+    }
+    .row-izakaya {
+        background: url($img + '/01_2_main_type/main_bg/01_2_main_type_06.png') no-repeat;
+        background-size: cover;
+        .izakaya-icon {
+            content: url($img + '/01_2_main_type/maintype_icon/01_2_main_type_08.png');
+        }
+    }
+    .row-lounge {
+        background: url($img + '/01_2_main_type/main_bg/01_2_main_type_08.png') no-repeat;
+        background-size: cover;
+        .lounge-icon {
+            content: url($img + '/01_2_main_type/maintype_icon/01_2_main_type_10.png');
+        }
+    }
+    .row-beer {
+        background: url($img + '/01_2_main_type/main_bg/01_2_main_type_10.png') no-repeat;
+        background-size: cover;
+        .beer-icon {
+            content: url($img + '/01_2_main_type/maintype_icon/01_2_main_type_12.png');
+        }
+    }
+    .row-fusion {
+        background: url($img + '/01_2_main_type/main_bg/01_2_main_type_12.png') no-repeat;
+        background-size: cover;
+        .fusion-icon {
+            content: url($img + '/01_2_main_type/maintype_icon/01_2_main_type_14.png');
+        }
+    }
+}

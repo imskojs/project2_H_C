@@ -1,0 +1,113 @@
+<ion-view id="theme" style="background-color: #2d4b65;"
+    view-title="HUNGERS"
+    hide-back-button="true"
+>
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-navicon-round"
+            ng-click="Main.toggleSideMenu()"
+        >
+        </button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-search"
+            ng-click="goToState('placeSearch')"
+        >
+        </button>
+    </ion-nav-buttons>
+
+    <ion-content class="has-subheader">
+        <ul>
+            <li class="row row-item zero flex-v row-hunting"
+                ng-click="appStorage.scrollPositionY = 0; goToState('main.place.list', {from: 'hunting', category: 'theme'})"
+            >
+                <div class="col-35 flex">
+                    <i class="icon hunting-icon "></i>
+                </div>
+                <div class="col col-text zero">
+                    <h3 class="title-text zero">
+                        Hunting for Hungers
+                    </h3>
+                    <p class="sub-text zero">
+                        외로운 솔로들을 위한 헌팅 주점
+                    </p>
+                </div>
+            </li>
+            <li class="row row-item zero flex-v row-romance"
+                ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'romance', category: 'theme'})"
+            >
+                <div class="col-35 flex">
+                    <i class="icon romance-icon "></i>
+                </div>
+                <div class="col col-text zero">
+                    <h3 class="title-text zero">
+                        Romantic Place
+                    </h3>
+                    <p class="sub-text zero">
+                        연인들을 위한 데이트 주점
+                    </p>
+                </div>
+            </li>
+            <li class="row row-item zero flex-v row-friends"
+                ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'friends', category: 'theme'})"
+            >
+                <div class="col-35 flex">
+                    <i class="icon friends-icon "></i>
+                </div>
+                <div class="col col-text zero">
+                    <h3 class="title-text zero">
+                        with Friends
+                    </h3>
+                    <p class="sub-text zero">
+                        편안한 분위기의 주점
+                    </p>
+                </div>
+            </li>
+            <li class="row row-item zero flex-v row-unique"
+                ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'unique', category: 'theme'})"
+            >
+                <div class="col-35 flex">
+                    <i class="icon unique-icon "></i>
+                </div>
+                <div class="col col-text zero">
+                    <h3 class="title-text zero">
+                        Unique Place
+                    </h3>
+                    <p class="sub-text zero">
+                        독특한 이색 주점
+                    </p>
+                </div>
+            </li>
+            <li class="row row-item zero flex-v row-dishes"
+                ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'dishes', category: 'theme'})"
+            >
+                <div class="col-35 flex">
+                    <i class="icon dishes-icon "></i>
+                </div>
+                <div class="col col-text zero">
+                    <h3 class="title-text zero">
+                        Good Dishes
+                    </h3>
+                    <p class="sub-text zero">
+                        맛있는 안주가 있는 주점
+                    </p>
+                </div>
+            </li>
+            <li class="row row-item zero flex-v row-eighties"
+                ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'eighties', category: 'theme'})"
+            >
+                <div class="col-35 flex">
+                    <i class="icon eighties-icon "></i>
+                </div>
+                <div class="col col-text zero">
+                    <h3 class="title-text zero">
+                        Back to the 8090's
+                    </h3>
+                    <p class="sub-text zero">
+                        복고풍의 감성 주점
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>

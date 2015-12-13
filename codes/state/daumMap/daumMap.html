@@ -1,0 +1,68 @@
+<ion-view id="daum-map"
+      hide-back-button="true"
+>
+    <ion-nav-buttons side="left">
+        <button class="button button-clear icon ion-android-arrow-back"
+            ng-click="goBack();"
+        >
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        HUNGERS
+    </ion-nav-title>
+
+        <!-- ng-if="!Map.hasStateParams('id')" -->
+    <ion-nav-buttons side="right"
+    >
+        <button class="button button-icon icon ion-pinpoint"
+            ng-click="Map.findMeThenSearchNearBy()"
+        >
+        </button>
+    </ion-nav-buttons>
+
+    <ion-header-bar class="bar-subheader zero flex"
+        ng-if="!Map.hasStateParams('id')"
+    >
+        <div class="r1 row row-search flex zero">
+            <div class="c1 col-30 zero">
+                <select ng-model="Map.searchType" style="background-color: white">
+                    <option value="address">지역</option>
+                    <option value="placeName">상호명</option>
+                </select>
+            </div>
+            <div class="c2 col-55 zero">
+                <input id="daum-map-search-input" type="text"
+                    placeholder="{{Map.setPlaceholderText()}}"
+                    ng-model="Map.search"
+                    ng-enter="Map.searchLocationNearBy(Map.search);"
+                >
+            </div>
+            <div class="c3 col-10 flex"
+                 touch
+                 ng-click="Map.searchLocationNearBy(Map.search);"
+                    >
+                <i class="ion-search"></i>
+            </div>
+        </div>
+    </ion-header-bar>
+
+    <ion-content class=""
+        ng-class="{'has-subheader': !Map.hasStateParams('id')}"
+        data-tap-disable="true"
+        scroll="false"
+    >
+        <div class="r2 row row-daum-map zero">
+            <div class="c1 col zero">
+                <div daum-map
+
+                     marker-src="img/720/main_gps/01_main_gps_07.png"
+                     marker-clicked-src="img/720/main_gps/01_main_gps_07.png"
+                     marker-width="30"
+                     marker-height="43"
+                        ></div>
+            </div>
+        </div>
+
+    </ion-content>
+
+</ion-view>

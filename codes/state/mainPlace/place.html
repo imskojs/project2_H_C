@@ -1,0 +1,67 @@
+<ion-view id="place"
+    view-title="HUNGERS"
+    cache-view="true"
+    hide-back-button="true"
+    ng-controller="PlaceController as Place"
+>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-search">
+        </button>
+    </ion-nav-buttons>
+
+    <ion-header-bar class="bar bar-subheader zero flex shadow bar-scroll-container"
+        no-tap-scroll="true"
+    >
+        <ion-scroll class="scroll-menu"
+            direction="x"
+            scrollbar-x=false
+            parent-scroll
+            delegate-handle="categorymenu"
+        >
+            <ul class="category-ul row zero"
+            >
+                <li class="category-li zero flex"
+                    ng-repeat="item in Place.Model.currentCategory "
+                    ng-class="{selected: item.params.from === Place.getParams('from')}"
+                    ng-style="{flex: '0 0 ' + item.vw + 'vw', '-webkit-flex': '0 0 ' + item.vw + 'vw'}"
+                    ng-click="Place.menuSelectHandler(Place.Model.currentCategory, 'categoryMenu', $index, item) "
+                    onFinishRender
+                >
+                    <h2>{{ item.name }}</h2>
+                </li>
+            </ul>
+        </ion-scroll>
+    </ion-header-bar>
+
+    <ion-header-bar class="bar-custom-header zero shadow row flex-v"
+        ng-if="Place.Model.currentItem.summary"
+    >
+        <h2 class="col-97 zero custom-header-text">{{Place.Model.currentItem.summary}}</h2>
+    </ion-header-bar>
+
+    <ion-nav-view name="place">
+    </ion-nav-view>
+
+    <ion-footer-bar class="bar-footer bar-custom-footer row zero">
+        <div class="col col-icon col-home zero flex "
+            ng-click="goToState('main.home.theme');"
+        >
+            <i class="icon-home icon"></i>
+        </div>
+        <div class="col col-icon col-location zero flex"
+            ng-click="goToState('main.daumMap');"
+        >
+            <i class="icon-location icon"></i>
+        </div>
+        <div class="col col-icon col-search zero flex"
+            ng-click="goToState('placeSearch');"
+        >
+            <i class="icon-search icon"></i>
+        </div>
+        <div class="col col-icon col-event zero flex"
+            ng-click="goToState('main.event.list', {eventType: 'hungersEvent'});"
+        >
+            <i class="icon-event icon"></i>
+        </div>
+    </ion-footer-bar>
+</ion-view>

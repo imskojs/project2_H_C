@@ -1,0 +1,170 @@
+<ion-view id="location"  style="background-color: #2d4b65;"
+    view-title="HUNGERS"
+    hide-back-button="true"
+>
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-navicon-round"
+            ng-click="Main.toggleSideMenu()"
+        >
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-search"
+            ng-click="goToState('placeSearch')"
+        >
+        </button>
+    </ion-nav-buttons>
+
+    <ion-content class="has-subheader">
+
+        <div class="subway shadow subway-north">
+
+            <h3 class="zero subway-title north">Hungers 강북노선</h3>
+            <p class="zero subway-sub">지역을 선택해 주세요</p>
+
+            <div class="subway-map-container">
+                <!-- first -->
+                <div class="row row-subway-map zero row-subway-map-north">
+                    <div class="col-circle col-circle-north flex"
+                        ng-click="appStorage.scrollPositionY = 0; goToState('main.place.list', {from: 'hongdea', category: 'north'})"
+                    >
+                        <p class="zero circle-text">홍대입구</p>
+                        <!-- <p class="zero circle-number">({{37}})</p> -->
+                    </div>
+                    <div class="col-line col-line-north flex col">
+                        <div class="line"></div>
+                    </div>
+                    <div class="col-circle col-circle-north flex"
+                        ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'etehwon', category: 'north'})"
+                    >
+                        <p class="zero circle-text">이태원</p>
+                        <!-- <p class="zero circle-number">({{47}})</p> -->
+                    </div>
+                    <div class="col-line col-line-north flex col">
+                        <div class="line"></div>
+                    </div>
+                    <div class="col-circle col-circle-north flex"
+                        ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'gyungridangil', category: 'north'})"
+                    >
+                        <p class="zero circle-text">경리단길</p>
+                        <!-- <p class="zero circle-number">({{23}})</p> -->
+                    </div>
+                </div>
+                <!-- second -->
+                <div class="row row-subway-map-second zero row-subway-map-north">
+                    <div class="col-vertical col-circle-north flex">
+                        <div class="vertical-line">
+                        </div>
+                    </div>
+                    <div class="col col-circle-north flex">
+                    </div>
+                    <div class="col-vertical col-circle-north flex">
+                        <div class="vertical-line">
+                        </div>
+                    </div>
+                </div>
+                <!-- third -->
+                <div class="row row-subway-map zero row-subway-map-north"
+                >
+                    <div class="col-circle col-circle-north flex"
+                        ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'gundeaentrance', category: 'north'})"
+                    >
+                        <p class="zero circle-text">건대입구</p>
+                        <!-- <p class="zero circle-number">({{47}})</p> -->
+                    </div>
+                    <div class="col-line col-line-north flex col">
+                        <div class="line"></div>
+                    </div>
+                    <div class="col-circle col-circle-north flex col-circle-inactive"
+                    >
+                        <p class="zero circle-text">미개통</p>
+                        <!-- <p class="zero circle-number">({{47}})</p> -->
+                    </div>
+                    <div class="col-line col-line-north flex col">
+                        <div class="line"></div>
+                    </div>
+                    <div class="col-circle col-circle-north flex col-circle-inactive">
+                        <p class="zero circle-text">미개통</p>
+                        <!-- <p class="zero circle-number">({{47}})</p> -->
+                    </div>
+                </div>
+            </div> <!-- subway-map-container end -->
+
+        </div> <!-- subway end -->
+
+
+
+        <div class="subway shadow subway-south">
+
+            <h3 class="zero subway-title north">Hungers 강남노선</h3>
+            <p class="zero subway-sub">지역을 선택해 주세요</p>
+
+            <div class="subway-map-container">
+                <!-- first -->
+                <div class="row row-subway-map zero row-subway-map-north">
+                    <div class="col-circle col-circle-north flex"
+                        ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'gangnam', category: 'south'})"
+                    >
+                        <p class="zero circle-text">강남</p>
+                        <!-- <p class="zero circle-number">({{37}})</p> -->
+                    </div>
+                    <div class="col-line col-line-north flex col">
+                        <div class="line"></div>
+                    </div>
+                    <div class="col-circle col-circle-north flex"
+                        ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'sinnonhyun', category: 'south'})"
+                    >
+                        <p class="zero circle-text">신논현</p>
+                        <!-- <p class="zero circle-number">({{47}})</p> -->
+                    </div>
+                    <div class="col-line col-line-north flex col">
+                        <div class="line"></div>
+                    </div>
+                    <div class="col-circle col-circle-north flex"
+                        ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'garohsoogil', category: 'south'})"
+                    >
+                        <p class="zero circle-text">가로수길</p>
+                        <!-- <p class="zero circle-number">({{47}})</p> -->
+                    </div>
+                </div>
+                <!-- second -->
+                <div class="row row-subway-map-second zero row-subway-map-north">
+                    <div class="col-vertical col-circle-north flex">
+                        <div class="vertical-line">
+                        </div>
+                    </div>
+                    <div class="col col-circle-north flex">
+                    </div>
+                    <div class="col-vertical col-circle-north flex">
+                        <div class="vertical-line">
+                        </div>
+                    </div>
+                </div>
+                <!-- third -->
+                <div class="row row-subway-map zero row-subway-map-north">
+                    <div class="col-circle col-circle-north flex"
+                        ng-click="appStorage.scrollPositionY = 0;goToState('main.place.list', {from: 'shinrim', category: 'south'})"
+                    >
+                        <p class="zero circle-text">신림</p>
+                        <!-- <p class="zero circle-number">({{23}})</p> -->
+                    </div>
+                    <div class="col-line col-line-north flex col">
+                        <div class="line"></div>
+                    </div>
+                    <div class="col-circle col-circle-north flex col-circle-inactive">
+                        <p class="zero circle-text">미개통</p>
+                        <!-- <p class="zero circle-number">({{47}})</p> -->
+                    </div>
+                    <div class="col-line col-line-north flex col">
+                        <div class="line"></div>
+                    </div>
+                    <div class="col-circle col-circle-north flex col-circle-inactive">
+                        <p class="zero circle-text">미개통</p>
+                        <!-- <p class="zero circle-number">({{47}})</p> -->
+                    </div>
+                </div>
+            </div> <!-- subway-map-container end -->
+
+        </div> <!-- subway end -->
+    </ion-content>
+</ion-view>

@@ -1,0 +1,51 @@
+<ion-view id="notice-list"
+    view-title="공지사항"
+    hide-back-button="true"
+>
+<ion-nav-buttons side="left">
+    <button class="button button-clear icon ion-android-arrow-back"
+        ng-click="goToState('main.home.theme')"
+    >
+    </button>
+</ion-nav-buttons>
+
+    <!-- List Content -->
+    <ion-content class="has-header">
+
+        <ion-refresher
+            pulling-text="새로운 내용이 있는지 보시려면 힘것 당기세요."
+            on-refresh="NoticeList.getNewerPosts()"
+            disable-pulling-rotation="false"
+        >
+        </ion-refresher>
+
+        <ul class="list-container">
+            <li class="row row-list flex-v"
+                ng-repeat="post in NoticeList.Model.postsWrapper.posts"
+                ng-click="goToState('main.noticeDetail', {id: post.id})"
+            >
+                <div class="col-14 flex col-notice-icon">
+                    <i class="notice-icon"></i>
+                </div>
+                <div class="col zero col-title-text">
+                    <p class="zero title-text">[공지] {{post.title}}</p>
+                </div>
+                <div class="col-20">
+                    <p class="zero">
+                        <span class="date-text">
+                           {{ post.createdAt | date: 'yyyy.MM.dd' }}
+                        </span>
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+        <ion-infinite-scroll
+            on-infinite="NoticeList.getOlderPosts()"
+            distance="1%"
+            immediate-check="false"
+            ng-if="NoticeList.checkForMore()"
+        >
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

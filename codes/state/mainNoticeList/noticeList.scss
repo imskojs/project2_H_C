@@ -1,0 +1,22 @@
+#notice-list {
+    .row + .row {
+        margin: 0;
+    }
+    .row-list {
+        height: 12.5vw;
+        border-bottom: 1px solid $light-grey;
+        .col-notice-icon{
+
+            .notice-icon {
+                width: 45%;
+            }
+        }
+        .col-title-text {
+            font-size: 4vw;
+        }
+        .date-text {
+            font-size: 3vw;
+            color: $dark-grey;
+        }
+    }
+}

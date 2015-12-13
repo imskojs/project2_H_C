@@ -1,0 +1,30 @@
+#home {
+    .bar-subheader {
+        background: white;
+        .row-bar {
+            width: 84%;
+            height: 30px;
+            border: 2px solid $positive;
+            margin: 0 auto;
+            text-align: center;
+            .col {
+                font-size: 15px;
+                color: $positive;
+                font-weight: bold;
+                &.selected {
+                    background: $positive;
+                    color: white;
+                }
+            }
+            .col-type {
+                height: 100%;
+                border: {
+                    left: 2px solid $positive;
+                    right: 2px solid $positive;
+                }
+            }
+        }
+
+    }
+
+}

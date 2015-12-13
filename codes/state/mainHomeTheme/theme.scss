@@ -1,0 +1,68 @@
+#theme {
+    .row + .row {
+        margin-top: 0;
+    }
+    .row-item {
+        height: 33.5vw;
+        border-bottom: 3px solid #ab9cbc;
+        .icon {
+            width: 50%;
+        }
+        .col-text {
+            margin-left: 2vw;
+            .title-text {
+                color: white;
+                font-size: 5vw;
+                line-height: 5vw;
+            }
+            .sub-text {
+                color: white;
+                font-size: 3.5vw;
+                line-height: 5.5vw;
+                font-weight: bold;
+            }
+        }
+    }
+    .row-hunting {
+        background: url($img + '/01_2_main_theme/01_2_main_theme_02.png') no-repeat;
+        background-size: cover;
+        .hunting-icon {
+            content: url($img + '/01_2_main_theme/01_2_main_theme_03.png');
+        }
+    }
+    .row-eighties {
+        background: url($img + '/01_2_main_theme/01_2_main_theme_04.png') no-repeat;
+        background-size: cover;
+        .eighties-icon {
+            content: url($img + '/01_2_main_theme/01_2_main_theme_06.png');
+        }
+    }
+    .row-romance {
+        background: url($img + '/01_2_main_theme/01_2_main_theme_07.png') no-repeat;
+        background-size: cover;
+        .romance-icon {
+            content: url($img + '/01_2_main_theme/01_2_main_theme_08.png');
+        }
+    }
+    .row-friends {
+        background: url($img + '/01_2_main_theme/01_2_main_theme_09.png') no-repeat;
+        background-size: cover;
+        .friends-icon {
+            content: url($img + '/01_2_main_theme/01_2_main_theme_10.png');
+        }
+    }
+    .row-unique {
+        background: url($img + '/01_2_main_theme/01_2_main_theme_11.png') no-repeat;
+        background-size: cover;
+        .unique-icon {
+            content: url($img + '/01_2_main_theme/01_2_main_theme_12.png');
+        }
+    }
+    .row-dishes {
+        background: url($img + '/01_2_main_theme/01_2_main_theme_13.png') no-repeat;
+        background-size: cover;
+        .dishes-icon {
+            content: url($img + '/01_2_main_theme/01_2_main_theme_14.png');
+        }
+    }
+}

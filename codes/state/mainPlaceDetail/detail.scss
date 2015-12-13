@@ -1,0 +1,232 @@
+// 22px, 15px, 13px
+#detail {
+    .row + .row {
+        margin: 0;
+    }
+
+    .spinner-container {
+        width: 100%;
+        height: 61.5vw;
+        border: 1px solid purple;
+        .spinner svg {
+            margin-left: 40%;
+            width: 20%;
+            height: 61.5vw;
+        }
+    }
+    .non-row-slide-box {
+        .row-slides {
+            height: 61.5vw;
+            .place-image {
+                height: 100%;
+                width: 100vw;
+            }
+        }
+    }
+
+
+    .detail-container {
+        width: 95%;
+        margin: 0 auto {
+            top: 5px;
+        };
+        padding: 1px;
+    }
+
+    .main-title {
+        font-size: 22px;
+        line-height: 110%;
+        margin: 0 {
+            bottom: 7px;
+        };
+    }
+
+    .tag-item {
+        -webkit-flex: 0 0 auto;-ms-flex: 0 0 auto;flex: 0 0 auto;
+        margin:{
+            right: 2px;
+        };
+        padding: 6px 5px;
+        background: $positive;
+        .tag-text {
+            font-size: 12px;
+            line-height: 100%;
+            color: white;
+        }
+    }
+
+    .section-title {
+        margin: 0;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-size: 18px;
+        line-height: 150%;
+        font-weight: bold;
+        color: $positive;
+        border-bottom: 1px solid $positive;
+    }
+
+    .row-content {
+        margin: {
+            top: 5px !important;
+        }
+    }
+    .section-content {
+        font-size: 15px;
+        line-height: 120%;
+        margin: 0;
+        color: $dark-grey;
+    }
+    .button-map {
+        content: url($img + '/02_2_detail_gender/detail_gender_button.png');
+        width: 100%;
+    }
+
+    .real-container {
+        height: 100px;
+        width: 100%;
+        &.non-member {
+            background-color: rgba(0, 0, 0, 0.95);
+            font-size: 16px;
+            color: white;
+            text-align: center;
+        }
+    }
+    .faint-text {
+        font-size: 13px;
+        line-height: 100%;
+        color: #cbcbcb;
+        height: 15px
+    }
+    // 실시간 정보
+    .row-sex-ratio {
+        height: 65px;
+        .real-title {
+            font-size: 16px;
+            line-height: 140%;
+            color: $positive;
+            font-weight: bold;
+        }
+        .count {
+            font-size: 25px;
+            line-height: 100%;
+        }
+        .table-text {
+            line-height: 100%;
+            font-size: 15px;
+        }
+        .ion-man::before {
+            font-size: 40px;
+            color: #1439a4;
+        }
+        .col-man-count {
+            color: #1439a4;
+            margin-left: 3%;
+        }
+        .ion-woman::before {
+            font-size: 40px;
+            color: #ce36d9;
+        }
+        .col-woman-count {
+           color: #ce36d9;
+            margin-left: 3%;
+        }
+    }
+    // 인기안주 / 주류 실시간
+    .real-wrapper-dish {
+        .real-container-dish.non-member {
+            height: 188px;
+        }
+        .real-container-dish {
+            // height: 133px;
+            .row-graph {
+                height: 15px;
+            }
+            .time-title {
+                font-size: 15px;
+                line-height: 100%;
+                letter-spacing: -1px;
+                margin-bottom: 5px;
+            }
+            .number-text {
+                font-size: 12px;
+                line-height: 100%;
+                color: $positive;
+            }
+            .col-graph {
+                margin: {
+                    right: 3%;
+                }
+            }
+            .menu-title {
+                font-size: 13px;
+                line-height: 100%;
+                margin-bottom: 3px;
+                color: $positive;
+                padding-left: 25%;
+            }
+        }
+    }
+
+    .margin-top-5px {
+        margin-top: 5px
+    }
+
+
+
+    .event-wrapper {
+        .row-event {
+            margin-top: 5px;
+            height: 30px;
+            .col-event-title{
+                background: $positive;
+                font-size: 15px;
+                line-height: 100%;
+                text-align: center;
+                color: white;
+                font-weight: bold;
+            }
+            .col-text {
+                font-size: 15px;
+                line-height: 100%;
+                color: $dark-grey;
+                margin: {
+                    left: 10px;
+                }
+            }
+        }
+    }
+
+    // 리뷰
+    .review-wrapper {
+        .girl-title {
+            font-size: 18px;
+            line-height: 120%;
+            color: $positive;
+        }
+        .girl-text {
+            font-size: 15px;
+            color: $dark-grey;
+        }
+        .row-view-more {
+            .col-view-more {
+                margin: {
+                    left: 80%;
+                }
+            }
+            .view-more-text {
+                font-size: 15px;
+                font-weight: bold;
+                line-height: 100%;
+                color: $positive;
+                text-align: right;
+            }
+        }
+    }
+    > .footer {
+        height: 44px !important;
+    }
+
+
+
+}

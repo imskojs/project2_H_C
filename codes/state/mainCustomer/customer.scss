@@ -1,0 +1,86 @@
+#customer {
+    .main-icon-container {
+        height: 79.5vw;
+        background: url($img + '/01_1_slideMenu_center/slideMenu_center_bg.png') no-repeat;
+        background-size: cover;
+        padding: 1px;
+        margin-bottom: 2vw;
+        .row-email-icon {
+            margin-top: 25vw;
+            .email-icon {
+                width: 27.4vw;
+                content: url($img + '/01_1_slideMenu_center/slideMenu_center_mail.png');
+            }
+        }
+        p {
+            text-align: center;
+            font-size: 4vw;
+            color: $positive;
+            font-weight: bold;
+        }
+        .p-first {
+            margin-top: 5vw;
+        }
+    }
+
+    .form-container {
+        width: 90%;
+        margin-left: 2%;
+    }
+    .row-input {
+        height: 7vw;
+        background: transparent;
+        color: #555;
+        margin-bottom: 1.6vw;
+        .c1 {
+            background: transparent;
+            font-size: 3.3vw;
+            p {
+                text-align: right;
+                padding-right: 2vw;
+            }
+        }
+        .c2 {
+            height: 100%;
+            input {
+                height: 100%;
+                width: 100%;
+                border: 1px solid #e1e1e1;
+                font-size: 3.5vw;
+                line-height: 3.5vw;
+                padding: 0 {
+                  left: 3vw;
+                }
+                background: transparent;
+            }
+            ::-webkit-input-placeholder {
+                font-size: 3vw;
+                padding-top: .45vw;
+                text-align: left;
+                color: $grey;
+            }
+
+        }
+    }
+    .row-text-area {
+        height: 30vw;
+        .align-self {
+            align-self: flex-start;
+        }
+        textarea {
+            border: 1px solid #e1e1e1;
+            width: 100%;
+            max-width: 100%;
+            height: 30vw;
+            max-height: 30vw;
+            font-size: 3.5vw;
+            line-height: 3.5vw;
+            padding: 3px;
+        }
+    }
+    .send-icon {
+        width: 69vw;
+        margin-top: 3vw;
+        content: url($img + '/01_1_slideMenu_center/slideMenu_center_button.png');
+    }
+}

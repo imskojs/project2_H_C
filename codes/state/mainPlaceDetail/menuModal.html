@@ -1,0 +1,65 @@
+<ion-modal-view id="menu">
+<ion-content>
+    <div class="menu-info row zero flex-v">
+        <div class="col-10 col-close"
+            ng-click="Detail.modal.hide();"
+        >
+            <i class="ion-close-circled"></i>
+        </div>
+        <div class="col col-title zero">
+            <p class="zero center">
+                메뉴안내
+            </p>
+        </div>
+    </div>
+
+    <!-- Food Detail -->
+    <div class="food-container menu-container">
+        <h2 class="zero menu-title">
+            Food Menu
+        </h2>
+        <div class="row row-menu-list zero"
+            ng-repeat="product in Detail.Model.current.products | filter:{category: 'FOOD'}"
+        >
+            <div class="col-65">
+                <p class="zero menu-description text-overflow">
+                {{product.name}}
+                </p>
+            </div>
+
+            <div class="col-35">
+                <p class="zero menu-price right text-overflow">
+                    {{product.price | number}} 원
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bottle Detail -->
+    <div class="food-container menu-container">
+        <h2 class="zero menu-title">
+            Bottle List
+        </h2>
+        <div class="row row-menu-list zero"
+            ng-repeat="product in Detail.Model.current.products | filter:{category: 'DRINK'}"
+        >
+            <div class="col-65">
+                <p class="zero menu-description text-overflow">
+                {{product.name}}
+                </p>
+            </div>
+
+            <div class="col-35">
+                <p class="zero menu-price right text-overflow">
+                    {{product.price | number}} 원
+<!--                     <span ng-if="product.description != '0'">
+                       / {{product.description}}
+                    </span>
+ -->
+                </p>
+            </div>
+        </div>
+    </div>
+</ion-content>
+</ion-modal-view>

@@ -1,0 +1,48 @@
+#main {
+    .side-menu-content {
+        background: $very-light;
+    }
+    .row-header {
+        height: 47vw;
+        background: $positive;
+        .hungers-logo {
+            width: 27vw;
+            content: url($img + '/01_1_slideMenu/slidemenu_logo.png')
+        }
+    }
+    .row-list {
+        height: 15vw;
+        border-bottom: 1px solid #6c6379;
+        .col-icon {
+            .icon {
+                width: 30%;
+            }
+        }
+
+        .col-text {
+            font-size: 5vw;
+            line-height: 5vw;
+            color: $positive;
+            font-weight: bold;
+        }
+    }
+    .login-icon {
+        content: url($img + '/01_1_slideMenu/slidemenu_login.png');
+    }
+    .notice-icon {
+        content: url('../img/720/01_1_slideMenu_notice1/01_1_slideMenu_notice1_03.png');
+    }
+    .association-icon {
+        content: url($img + '/01_1_slideMenu/slidemenu_association.png');
+    }
+    .contract-icon {
+        content: url($img + '/01_1_slideMenu/slidemenu_contract.png');
+    }
+    .customer-icon {
+        content: url($img + '/01_1_slideMenu/slidemenu_client.png');
+    }
+    .ion-unlocked::before {
+        font-size: 20px;
+        color: $positive;
+    }
+}
