@@ -116,15 +116,15 @@
       // $httpProvider.defaults.withCredentials = true;
       $stateProvider
 
-      .state('main.admin', {
-        url: '/admin',
-        views: {
-          main: {
-            templateUrl: 'state/admin/admin.html',
-            controller: 'AdminController as Admin'
+        .state('main.admin', {
+          url: '/admin',
+          views: {
+            main: {
+              templateUrl: 'state/admin/admin.html',
+              controller: 'AdminController as Admin'
+            }
           }
-        }
-      })
+        })
         .state('adminMenu', {
           url: '/adminMenu',
           templateUrl: 'state/adminMenu/adminMenu.html',
@@ -161,22 +161,22 @@
       })
 
       .state('main', {
-        abstract: true,
+        // abstract: true,
         url: '/main',
         templateUrl: 'state/main/main.html',
         controller: 'MainController as Main'
       })
 
       .state('main.home', {
-        abstract: true,
-        url: '/home',
-        views: {
-          main: {
-            templateUrl: 'state/mainHome/home.html',
-            controller: 'HomeController as Home'
+          // abstract: true,
+          url: '/home',
+          views: {
+            main: {
+              templateUrl: 'state/mainHome/home.html',
+              controller: 'HomeController as Home'
+            }
           }
-        }
-      })
+        })
         .state('main.home.theme', {
           url: '/theme',
           views: {
@@ -216,14 +216,14 @@
       })
 
       .state('main.event', {
-        url: '/event',
-        views: {
-          main: {
-            templateUrl: 'state/mainEvent/event.html',
-            controller: 'EventController as Event'
+          url: '/event',
+          views: {
+            main: {
+              templateUrl: 'state/mainEvent/event.html',
+              controller: 'EventController as Event'
+            }
           }
-        }
-      })
+        })
         .state('main.event.list', {
           url: '/list/:eventType',
           views: {
@@ -244,14 +244,14 @@
         })
 
       .state('main.place', {
-        url: '/place/:category',
-        views: {
-          main: {
-            templateUrl: 'state/mainPlace/place.html',
-            // controller: 'PlaceController as Place'
+          url: '/place/:category',
+          views: {
+            main: {
+              templateUrl: 'state/mainPlace/place.html',
+              // controller: 'PlaceController as Place'
+            }
           }
-        }
-      })
+        })
         .state('main.place.list', {
           url: '/:from/list',
           views: {
@@ -303,7 +303,7 @@
         views: {
           main: {
             templateUrl: 'state/mainContract/contract.html'
-            // controller: 'ContractController as Contract'
+              // controller: 'ContractController as Contract'
           }
         }
       })
