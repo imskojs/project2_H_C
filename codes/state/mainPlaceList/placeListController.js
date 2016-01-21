@@ -3,9 +3,9 @@
   angular.module('app')
     .controller('PlaceListController', PlaceListController);
 
-  PlaceListController.$inject = ['PlaceListModel', 'PlaceModel', 'Places', '$state', '$scope', '$stateParams', 'Message', '$cordovaGeolocation', 'Distance', '$ionicScrollDelegate', 'appStorage'];
+  PlaceListController.$inject = ['PlaceListModel', 'PlaceModel', 'Places', '$state', '$scope', '$stateParams', 'Message', '$cordovaGeolocation', 'Distance', '$ionicScrollDelegate', 'appStorage', '$ionicViewSwitcher'];
 
-  function PlaceListController(PlaceListModel, PlaceModel, Places, $state, $scope, $stateParams, Message, $cordovaGeolocation, Distance, $ionicScrollDelegate, appStorage) {
+  function PlaceListController(PlaceListModel, PlaceModel, Places, $state, $scope, $stateParams, Message, $cordovaGeolocation, Distance, $ionicScrollDelegate, appStorage, $ionicViewSwitcher) {
 
     var PlaceList = this;
     PlaceList.Model = PlaceListModel;
@@ -13,12 +13,23 @@
     PlaceList.getFurtherPlaces = getFurtherPlaces;
     PlaceList.checkForMore = checkForMore;
     PlaceList.goToState = goToState;
-
+    PlaceList.goHomeState = goHomeState;
     $scope.$on('$ionicView.beforeEnter', onBeforeEnter);
 
     //------------------------
     //  IMPLEMENTATION
     //------------------------
+    function goHomeState() {
+      $ionicViewSwitcher.nextDirection('back');
+      if ($state.params.category === 'theme') {
+        $state.go('main.home.theme');
+      } else if ($state.params.category === 'type') {
+        $state.go('main.home.type');
+      } else if ($state.params.category === 'north' || $state.params.category === 'south') {
+        $state.go('main.home.location');
+      }
+    }
+
     function goToState(place) {
       var scrollPos = $ionicScrollDelegate.$getByHandle('placeList').getScrollPosition();
       console.log("---------- scrollPos ----------");
@@ -72,9 +83,9 @@
       var tagsCSVInKorean = tagsArrayKorean.join(','); //tagsCSVInKorean = '헌팅,감성,친구';
 
       $cordovaGeolocation.getCurrentPosition({
-        maximumAge: 600000,
-        timeout: 5000
-      })
+          maximumAge: 600000,
+          timeout: 5000
+        })
         .then(function success(position) {
           if (position.coords == null) {
             Message.hide();
@@ -122,13 +133,13 @@
           Message.hide();
 
           Places.getPlacesWithin({
-            latitude: 37.498085435791786,
-            longitude: 127.02800027507125,
-            distance: 300000,
-            limit: 4,
-            tags: tagsCSVInKorean,
-            populates: 'photos'
-          }).$promise
+              latitude: 37.498085435791786,
+              longitude: 127.02800027507125,
+              distance: 300000,
+              limit: 4,
+              tags: tagsCSVInKorean,
+              populates: 'photos'
+            }).$promise
             .then(function success(placesWrapper) {
               PlaceListModel.more = placesWrapper.more;
               PlaceListModel.currentLocation = [
@@ -160,9 +171,9 @@
       var tagsCSVInKorean = tagsArrayKorean.join(','); //tagsCSVInKorean = '헌팅,감성,친구';
 
       $cordovaGeolocation.getCurrentPosition({
-        maximumAge: 600000,
-        timeout: 5000
-      })
+          maximumAge: 600000,
+          timeout: 5000
+        })
         .then(function success(position) {
           if (position.coords == null) {
             Message.hide();

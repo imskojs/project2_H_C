@@ -38,6 +38,7 @@
       };
 
 
+      // $state.go('main.home.theme');
       $rootScope.goToState = function(state, params) {
         $ionicSideMenuDelegate.toggleLeft(false);
         $state.go(state, params);
@@ -82,6 +83,9 @@
           if (areStates(['main.detail'])) {
             appStorage.isBackViewDetail = true;
             return $ionicHistory.goBack();
+          } else if (areStates(['main.place.list'])) {
+            $state.go('main.home.theme');
+            return;
           }
           $ionicHistory.goBack();
         }, 101);
@@ -105,13 +109,14 @@
 
   .config([
 
-    '$stateProvider', '$httpProvider',
+    '$stateProvider', '$httpProvider', '$ionicConfigProvider',
 
-    function($stateProvider, $httpProvider) {
+    function($stateProvider, $httpProvider, $ionicConfigProvider) {
 
       // Security handler
       $httpProvider.interceptors.push('AuthInterceptor');
-
+      // $ionicConfigProvider.views.forwardCache(true);
+      // $ionicConfigProvider.views.swipeBackEnabled(false);
       // Allow session
       // $httpProvider.defaults.withCredentials = true;
       $stateProvider
