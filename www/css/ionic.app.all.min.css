@@ -11521,62 +11521,6 @@ progress[value]::-webkit-progress-bar {
   #location .has-subheader .subway-south .vertical-line {
     border: 2px solid #11a412; }
 
-#theme .row + .row {
-  margin-top: 0; }
-
-#theme .row-item {
-  height: 33.5vw;
-  border-bottom: 3px solid #ab9cbc; }
-  #theme .row-item .icon {
-    width: 50%; }
-  #theme .row-item .col-text {
-    margin-left: 2vw; }
-    #theme .row-item .col-text .title-text {
-      color: white;
-      font-size: 5vw;
-      line-height: 5vw; }
-    #theme .row-item .col-text .sub-text {
-      color: white;
-      font-size: 3.5vw;
-      line-height: 5.5vw;
-      font-weight: bold; }
-
-#theme .row-hunting {
-  background: url("../img/720/01_2_main_theme/01_2_main_theme_02.png") no-repeat;
-  background-size: cover; }
-  #theme .row-hunting .hunting-icon {
-    content: url("../img/720/01_2_main_theme/01_2_main_theme_03.png"); }
-
-#theme .row-eighties {
-  background: url("../img/720/01_2_main_theme/01_2_main_theme_04.png") no-repeat;
-  background-size: cover; }
-  #theme .row-eighties .eighties-icon {
-    content: url("../img/720/01_2_main_theme/01_2_main_theme_06.png"); }
-
-#theme .row-romance {
-  background: url("../img/720/01_2_main_theme/01_2_main_theme_07.png") no-repeat;
-  background-size: cover; }
-  #theme .row-romance .romance-icon {
-    content: url("../img/720/01_2_main_theme/01_2_main_theme_08.png"); }
-
-#theme .row-friends {
-  background: url("../img/720/01_2_main_theme/01_2_main_theme_09.png") no-repeat;
-  background-size: cover; }
-  #theme .row-friends .friends-icon {
-    content: url("../img/720/01_2_main_theme/01_2_main_theme_10.png"); }
-
-#theme .row-unique {
-  background: url("../img/720/01_2_main_theme/01_2_main_theme_11.png") no-repeat;
-  background-size: cover; }
-  #theme .row-unique .unique-icon {
-    content: url("../img/720/01_2_main_theme/01_2_main_theme_12.png"); }
-
-#theme .row-dishes {
-  background: url("../img/720/01_2_main_theme/01_2_main_theme_13.png") no-repeat;
-  background-size: cover; }
-  #theme .row-dishes .dishes-icon {
-    content: url("../img/720/01_2_main_theme/01_2_main_theme_14.png"); }
-
 #type .row + .row {
   margin-top: 0; }
 
@@ -11632,6 +11576,62 @@ progress[value]::-webkit-progress-bar {
   background-size: cover; }
   #type .row-fusion .fusion-icon {
     content: url("../img/720/01_2_main_type/maintype_icon/01_2_main_type_14.png"); }
+
+#theme .row + .row {
+  margin-top: 0; }
+
+#theme .row-item {
+  height: 33.5vw;
+  border-bottom: 3px solid #ab9cbc; }
+  #theme .row-item .icon {
+    width: 50%; }
+  #theme .row-item .col-text {
+    margin-left: 2vw; }
+    #theme .row-item .col-text .title-text {
+      color: white;
+      font-size: 5vw;
+      line-height: 5vw; }
+    #theme .row-item .col-text .sub-text {
+      color: white;
+      font-size: 3.5vw;
+      line-height: 5.5vw;
+      font-weight: bold; }
+
+#theme .row-hunting {
+  background: url("../img/720/01_2_main_theme/01_2_main_theme_02.png") no-repeat;
+  background-size: cover; }
+  #theme .row-hunting .hunting-icon {
+    content: url("../img/720/01_2_main_theme/01_2_main_theme_03.png"); }
+
+#theme .row-eighties {
+  background: url("../img/720/01_2_main_theme/01_2_main_theme_04.png") no-repeat;
+  background-size: cover; }
+  #theme .row-eighties .eighties-icon {
+    content: url("../img/720/01_2_main_theme/01_2_main_theme_06.png"); }
+
+#theme .row-romance {
+  background: url("../img/720/01_2_main_theme/01_2_main_theme_07.png") no-repeat;
+  background-size: cover; }
+  #theme .row-romance .romance-icon {
+    content: url("../img/720/01_2_main_theme/01_2_main_theme_08.png"); }
+
+#theme .row-friends {
+  background: url("../img/720/01_2_main_theme/01_2_main_theme_09.png") no-repeat;
+  background-size: cover; }
+  #theme .row-friends .friends-icon {
+    content: url("../img/720/01_2_main_theme/01_2_main_theme_10.png"); }
+
+#theme .row-unique {
+  background: url("../img/720/01_2_main_theme/01_2_main_theme_11.png") no-repeat;
+  background-size: cover; }
+  #theme .row-unique .unique-icon {
+    content: url("../img/720/01_2_main_theme/01_2_main_theme_12.png"); }
+
+#theme .row-dishes {
+  background: url("../img/720/01_2_main_theme/01_2_main_theme_13.png") no-repeat;
+  background-size: cover; }
+  #theme .row-dishes .dishes-icon {
+    content: url("../img/720/01_2_main_theme/01_2_main_theme_14.png"); }
 
 #notice-detail .has-header {
   padding: 15px; }
