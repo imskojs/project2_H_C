@@ -3,9 +3,21 @@
   angular.module('app')
     .controller('PlaceListController', PlaceListController);
 
-  PlaceListController.$inject = ['PlaceListModel', 'PlaceModel', 'Places', '$state', '$scope', '$stateParams', 'Message', '$cordovaGeolocation', 'Distance', '$ionicScrollDelegate', 'appStorage', '$ionicViewSwitcher'];
+  PlaceListController.$inject = [
 
-  function PlaceListController(PlaceListModel, PlaceModel, Places, $state, $scope, $stateParams, Message, $cordovaGeolocation, Distance, $ionicScrollDelegate, appStorage, $ionicViewSwitcher) {
+    'PlaceListModel', 'PlaceModel', 'Places', '$state', '$scope',
+    '$stateParams', 'Message', '$cordovaGeolocation', 'Distance',
+    '$ionicScrollDelegate', 'appStorage', '$ionicViewSwitcher', 'LogService'
+
+  ];
+
+  function PlaceListController(
+
+    PlaceListModel, PlaceModel, Places, $state, $scope,
+    $stateParams, Message, $cordovaGeolocation, Distance,
+    $ionicScrollDelegate, appStorage, $ionicViewSwitcher, LogService
+
+  ) {
 
     var PlaceList = this;
     PlaceList.Model = PlaceListModel;
@@ -15,10 +27,15 @@
     PlaceList.goToState = goToState;
     PlaceList.goHomeState = goHomeState;
     $scope.$on('$ionicView.beforeEnter', onBeforeEnter);
+    $scope.$on('$ionicView.afterEnter', onAfterEnter);
 
     //------------------------
     //  IMPLEMENTATION
     //------------------------
+    function onAfterEnter() {
+      return LogService.sendUUID();
+    }
+
     function goHomeState() {
       $ionicViewSwitcher.nextDirection('back');
       if ($state.params.category === 'theme') {
