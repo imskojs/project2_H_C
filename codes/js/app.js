@@ -84,8 +84,11 @@
             appStorage.isBackViewDetail = true;
             return $ionicHistory.goBack();
           } else if (areStates(['main.place.list'])) {
+            console.log("'test' :::\n", 'test');
             $state.go('main.home.theme');
             return;
+          } else if (areStates(['main.home.theme', 'main.home.type', 'main.home.location'])) {
+            return ionic.Platform.exitApp();
           }
           $ionicHistory.goBack();
         }, 101);
